@@ -4,11 +4,13 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Network Protocols and Architecture (1), 被捕の瓜子Blog">
+    <meta name="keywords" content="Kali Linux安全测试笔记, 被捕の瓜子Blog">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="一、Week11. Establishing the Rules1.1 Reading: About This Course有几个这个课程提出的学习目标，等学完用来检测一下自己的学习情况。At the end of this course,">
+    <meta name="description" content="Kali Linux安全测试笔记
+Task1. Kali Linux渗透测试介绍###渗透测试标准——PETS1.前期交互阶段2.情报收集阶段3.威胁建模阶段4.漏洞分析阶段5.渗透攻击阶段6.后渗透测试阶段7.渗透测试报告
+###安全测试">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Network Protocols and Architecture (1) | 被捕の瓜子Blog</title>
+    <title>Kali Linux安全测试笔记 | 被捕の瓜子Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -253,7 +255,7 @@
 <script src="/libs/cryptojs/crypto-js.min.js"></script>
 <script>
     (function() {
-        let pwd = '';
+        let pwd = '123456';
         if (pwd && pwd.length > 0) {
             if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
                 alert('密码错误，将返回主页！');
@@ -266,13 +268,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Network Protocols and Architecture (1)
+                        Kali Linux安全测试笔记
                     </div>
                 </div>
             </div>
@@ -383,12 +385,12 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/网络基础/" target="_blank">
-                            <span class="chip bg-color">网络基础</span>
+                        <a href="/tags/Linux/" target="_blank">
+                            <span class="chip bg-color">Linux</span>
                         </a>
                         
-                        <a href="/tags/Cisco/" target="_blank">
-                            <span class="chip bg-color">Cisco</span>
+                        <a href="/tags/安全测试/" target="_blank">
+                            <span class="chip bg-color">安全测试</span>
                         </a>
                         
                     </div>
@@ -399,8 +401,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/计算机网络/" class="post-category" target="_blank">
-                            计算机网络
+                        <a href="/categories/网络安全/" class="post-category" target="_blank">
+                            网络安全
                         </a>
                         
                     </div>
@@ -411,7 +413,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-05-24
+                    2019-09-30
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -425,14 +427,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.5k
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    19 分
+                    5 分
                 </div>
                 
                 
@@ -448,136 +450,126 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="一、Week1"><a href="#一、Week1" class="headerlink" title="一、Week1"></a>一、Week1</h1><h2 id="1-Establishing-the-Rules"><a href="#1-Establishing-the-Rules" class="headerlink" title="1. Establishing the Rules"></a>1. Establishing the Rules</h2><h3 id="1-1-Reading-About-This-Course"><a href="#1-1-Reading-About-This-Course" class="headerlink" title="1.1 Reading: About This Course"></a>1.1 Reading: About This Course</h3><p>有几个这个课程提出的学习目标，等学完用来检测一下自己的学习情况。<br>At the end of this course, you will be able to:</p>
+                <h1 id="Kali-Linux安全测试笔记"><a href="#Kali-Linux安全测试笔记" class="headerlink" title="Kali Linux安全测试笔记"></a>Kali Linux安全测试笔记</h1><hr>
+<h2 id="Task1-Kali-Linux渗透测试介绍"><a href="#Task1-Kali-Linux渗透测试介绍" class="headerlink" title="Task1. Kali Linux渗透测试介绍"></a>Task1. Kali Linux渗透测试介绍</h2><p>###渗透测试标准——PETS<br>1.前期交互阶段<br>2.情报收集阶段<br>3.威胁建模阶段<br>4.漏洞分析阶段<br>5.渗透攻击阶段<br>6.后渗透测试阶段<br>7.渗透测试报告</p>
+<p>###安全测试误区</p>
+<ul>
+<li>扫描器就是一切<ul>
+<li>忽视业务逻辑中的漏洞</li>
+</ul>
+</li>
+</ul>
+<p>###Kali Linux 介绍</p>
 <ol>
-<li>Explain how protocols and standards benefit a global internetwork.<br>解释协议和标准的作用方式？？？</li>
-<li>Describe how the Ethernet Protocol transmits data within a LAN.<br>描述局域网下以太网协议如何传输数据？？？</li>
-<li>Explain IPv4 addressing and the role of subnet masks.<br>解释IPv4寻址以及子网掩码的作用？？？</li>
-<li>Use Cisco Packet Tracer to connect hosts to a wireless router in a LAN.<br>使用软件在局域网环境下将主机连接到无线路由器</li>
-<li>Use a protocol analyzer or “packet sniffer” to open and examine a data packet that has been transmitted across a network.<br>使用协议分析器或者数据包分析器来打开并检查一个网络上的数据包</li>
-<li>Examine a Windows computer to locate the physical or MAC address used send and receive data.<br>检查Windows计算机，找到用于发送和接收数据的物理地址（或MAC地址）。</li>
+<li>FHS标准目录结构</li>
+<li>定制内核</li>
+<li>基于Debian的Linux版本</li>
+<li>支持ARM和手机平台<br>手机上mapHunter???</li>
 </ol>
-<h3 id="1-2-Reading-Cisco-Packet-Tracer-软件介绍"><a href="#1-2-Reading-Cisco-Packet-Tracer-软件介绍" class="headerlink" title="1.2 Reading: Cisco Packet Tracer 软件介绍"></a>1.2 Reading: Cisco Packet Tracer 软件介绍</h3><h3 id="1-3-Reading-The-Three-Elements"><a href="#1-3-Reading-The-Three-Elements" class="headerlink" title="1.3 Reading: The Three Elements"></a>1.3 Reading: The Three Elements</h3><p>自古至今 任何一种网络的主要目的都是给我们提供一种交流和分享信息的途径。而分享信息则会让人类进步。</p>
-<p>所有通信都以一条消息开始，从一个个体或者设备发送到另一个。而随着科技进步，消息发送、接收、传递的方法都会改变。</p>
-<p>所有通信方法都具有<strong>三个共同要素</strong>：</p>
-<ol>
-<li>Message source or Sender</li>
-<li>Destination or Receiver of the message</li>
-<li>Transmission medium or channel</li>
-</ol>
-<p>Watch the animation below to see how messages are sent and received in human and computer communication.</p>
-<p><img src="http://static.zybuluo.com/Adward-Wang/efjwwht0mklyazyi05h50n4z/The_Three_Elements.gif" alt="The_Three_Elements.gif-222.6kB"></p>
-<h3 id="1-4-Reading-Communication-Protocols"><a href="#1-4-Reading-Communication-Protocols" class="headerlink" title="1.4 Reading: Communication Protocols"></a>1.4 Reading: Communication Protocols</h3><p>日常生活中的通信具有不同形式，不同的应用场景具有不同规则。<br>在开始彼此沟通之前，我们建立规则或协议来管理对话，如图1至图3所示。为了成功地传递和理解消息，必须遵循这些规则或协议。成功的人类交流协议包括:</p>
+<p>###Kali Linux 策略</p>
 <ul>
-<li>An identified sender and receiver    已标志的发送方和接收方</li>
-<li>Agreed upon method of communicating (face-to-face, telephone, letter, photograph) 商定的沟通方式</li>
-<li>Common language and grammar 共同的语言和语法</li>
-<li>Speed and timing of delivery 交付的速度和时间</li>
-<li>Confirmation or acknowledgment requirements 确认需求</li>
+<li>ROOT 用户策略 （默认ROOT）</li>
+<li>网络服务策略 （默认网络服务关闭）<br>需手动启动</li>
+<li>更新升级策略</li>
 </ul>
-<p>网络通信中使用的技术与人类间对话的基本原理类似。</p>
-<p><img src="http://static.zybuluo.com/Adward-Wang/4jiuu83j1u8wnwln201ulfgj/1Method.jpg" alt="1Method.jpg-41.6kB"><br>Firgure1. Method</p>
-<p><img src="http://static.zybuluo.com/Adward-Wang/l3jhtd0uayq0q2ihiafuz8a1/2Language.jpg" alt="2Language.jpg-39.9kB"><br>Firgure2. Language</p>
-<p><img src="http://static.zybuluo.com/Adward-Wang/0lrqb0rh3tuxso8d0g0fpogp/3Confirmation.jpg" alt="3Confirmation.jpg-40kB"><br>Firgure1. Confirmation</p>
-<h3 id="1-5-Video-Network-Protocols"><a href="#1-5-Video-Network-Protocols" class="headerlink" title="1.5 Video: Network Protocols"></a>1.5 Video: Network Protocols</h3><h3 id="1-6-Reading-Why-Protocols-Matter-为何协议很重要？"><a href="#1-6-Reading-Why-Protocols-Matter-为何协议很重要？" class="headerlink" title="1.6 Reading: Why Protocols Matter 为何协议很重要？"></a>1.6 Reading: Why Protocols Matter 为何协议很重要？</h3><p>In both a wired and wireless environment, a local network is defined as an area where all hosts must “speak the same language” or in computer terms “share a common protocol”.<br>在有线和无线环境中，<strong>局域网</strong>均定义为所有主机必须“说同一语言”或用计算机术语“共享通用协议”的区域。<br>Networking protocols define many aspects of communication over the local network, including: message format, message size, timing, encoding, and message patterns.</p>
-<p>Review the figure below for more information.</p>
-<p><img src="http://static.zybuluo.com/Adward-Wang/b73s0rd7z2s6wdi5s5z9q9vv/Why_Protocols_matter.jpg" alt="Why_Protocols_matter.jpg-36kB"></p>
-<p><strong>Timing</strong><br>Many network communication functions are dependent on timing. Timing determines the speed at which the bits are transmitted across the network. It also affects when an individual host can send data and the total amount of data that can be sent in any one transmission.<br><strong>时序</strong><br>许多网络通信功能取决于时序。时序决定了比特在网络上传输的速度。它还会影响单个主机何时可以发送数据以及在任何一次传输中可以发送的数据总量。</p>
-<p><strong>Message Size</strong> Message可译为报文<br>The rules that govern the size of the pieces communicated across the network are very strict. They can also be different, depending on the channel used. When a long message is sent from one host to another over a network, it may be necessary to break the message into smaller pieces in order to ensure that the message can be delivered reliably.</p>
-<p><strong>Encapsulation</strong> 封装<br>Each message transmitted on a network must include a header that contains addressing information that identifies the source and destination hosts, otherwise it cannot be delivered. Encapsulation is the process of adding this information to the pieces of data that make up the message. In addition to addressing, there may be other information in the header that ensures that the message is delivered to the correct application on the destination host.</p>
-<p><strong>Message Format</strong><br>When a message is sent from source to destination, it must use a specific format or structure. Message formats depend on the type of message and the channel that is used to deliver the message.</p>
-<p><strong>Encoding</strong><br>Messages sent across the network are first converted into bits by the sending host. Each bit is encoded into a pattern of sounds, light waves, or electrical impulses depending on the network media over which the bits are transmitted. The destination host receives and decodes the signals in order to interpret the message.</p>
-<p><strong>Message Patterns</strong><br>Some messages require an acknowledgment before the next message can be sent. This type of request/response pattern is a common aspect of many networking protocols. However, there are other types of messages that may be simply streamed across the network, without concern as to whether or not they reach their destination.<br>（暗示TCP UDP？？？）</p>
-<hr>
-<h2 id="2-So-Who-Makes-the-Rules"><a href="#2-So-Who-Makes-the-Rules" class="headerlink" title="2. So Who Makes the Rules"></a>2. So Who Makes the Rules</h2><h3 id="2-1-Reading-The-Internet-and-Standards"><a href="#2-1-Reading-The-Internet-and-Standards" class="headerlink" title="2.1 Reading: The Internet and Standards"></a>2.1 Reading: The Internet and Standards</h3><p>标准是一组规则，用来决定必须如何做某事。网络和Internet标准确保所有连接到网络的设备以相同的方式实现相同的规则或协议集。使用标准，不同类型的设备可以通过互联网互相发送信息.</p>
-<p><img src="http://static.zybuluo.com/Adward-Wang/xu7c0gjcknd9bnav3vy1561k/Internet_Standards.gif" alt="Internet_Standards.gif-2904.5kB"></p>
-<h3 id="2-2-Reading-Network-Standards-Organizations"><a href="#2-2-Reading-Network-Standards-Organizations" class="headerlink" title="2.2 Reading: Network Standards Organizations"></a>2.2 Reading: Network Standards Organizations</h3><p>Internet标准是讨论，问题解决和测试的全面循环的最终结果。如图所示，这些不同的标准由各种组织开发，发布和维护。当提出新标准时，开发和批准过程的每个阶段都记录在编号为Request for Comments（RFC）的文档中，以便跟踪该标准的演变。Internet标准的RFC由Internet工程任务组（IETF）发布和管理。</p>
-<pre><code>Q: 没有统一的标准码？这段话是不是这个意思？“？</code></pre><p>You can check out the IETF website at <a href="http://ietf.org" target="_blank" rel="noopener">http://ietf.org</a>.</p>
-<p><img src="http://static.zybuluo.com/Adward-Wang/c6g8l3brl0d97n4xkiearecj/n_organization.jpg" alt="n_organization.jpg-64.4kB"></p>
-<hr>
-<h2 id="3-Visualizing-How-Protocols-Work"><a href="#3-Visualizing-How-Protocols-Work" class="headerlink" title="3. Visualizing How Protocols Work"></a>3. Visualizing How Protocols Work</h2><h3 id="3-1-Reading-Stacking-Them-up"><a href="#3-1-Reading-Stacking-Them-up" class="headerlink" title="3.1 Reading: Stacking Them up"></a>3.1 Reading: Stacking Them up</h3><p>主机之间的成功通信需要多种协议之间的交互。而这些协议通过安装在每个主机和网络设备上的软件和硬件来实现。<br>The interaction between the different protocols on a device can be shown as a <strong>protocol stack</strong>, as shown in the figure. A stack illustrates the protocols as a <strong>layered hierarchy</strong>, with each higher-level protocol depending on the services of the protocols shown in the lower levels.（协议栈分层）</p>
-<p>The separation of functions enables each layer in the stack to operate independently of others. For example, you can use your laptop computer connected to a cable modem at home to access your favorite website, or view the same website on your laptop using wireless at the library. The function of the web browser is not affected by the change in the physical location nor the method of connectivity.<br>功能的分离使堆栈中的每一层都可以独立运行。例如，您可以在家里使用连接到电缆调制解调器的便携式计算机访问您喜欢的网站，或在图书馆使用无线方式在便携式计算机上查看同一网站。Web浏览器的功能不受物理位置的更改或连接方法的影响。</p>
-<pre><code>网上的精选摘要
-TCP/IP（Transmission Control Protocol/Internet Protocol，传输控制协议/网际协议）是指能够在多个不同网络间实现信息传输的协议簇。</code></pre><h3 id="3-2-Reading-Using-a-Layered-Model"><a href="#3-2-Reading-Using-a-Layered-Model" class="headerlink" title="3.2 Reading: Using a Layered Model"></a>3.2 Reading: Using a Layered Model</h3><pre><code>　　tcp/ip是事实标准，分4层。osi模型是国际标准，分7层。讲课的时候，一般把他们综合起来讲，就说是5层。他把网络接口层分开为数据链路层和物理层了。</code></pre><p>分层模型帮助我们可视化各种协议如何协同工作以支持网络通信。分层模型描述了在每一层中发生的协议的操作，以及与它上面和下面的层的交互。分层模型有很多好处:</p>
+<p>###关于本教程</p>
 <ul>
-<li>协助协议设计，因为在特定层上运行的协议定义了它们所作用的信息，并定义了上下层的接口</li>
-<li>促进竞争，因为来自不同供应商的产品可以一起工作</li>
-<li>允许技术更改在一个层次发生，而不影响其他层次</li>
-<li>提供描述网络功能和功能的通用语言</li>
+<li>Kali 很强大，但不是全部</li>
+<li>实践是最好的老师</li>
+<li>自行补充所需安全工具，独一无二的Kali</li>
 </ul>
-<p>第一个网络通信的分层模型创建于20世纪70年代初，被称为Internet模型。它定义了通信成功所必须具备的四类功能。用于Internet通信的一套TCP/IP协议遵循这个模型的结构，如图所示。因此，Internet模型通常称为TCP/IP模型。</p>
-<p><img src="http://static.zybuluo.com/Adward-Wang/j2v62n5f0zrlcwqxmtmq7jej/TCP_IP_Model.jpg" alt="TCP_IP_Model.jpg-43.6kB"></p>
-<h3 id="3-3-Video-Protocols-Stacking-Them-Up"><a href="#3-3-Video-Protocols-Stacking-Them-Up" class="headerlink" title="3.3 Video: Protocols-Stacking Them Up"></a>3.3 Video: Protocols-Stacking Them Up</h3><p><img src="http://static.zybuluo.com/Adward-Wang/x57nw9u8p1uaj9964jg5tpn8/TCP_IP_Model2.jpg" alt="TCP_IP_Model2.jpg-57.9kB"></p>
-<pre><code>**  Q：（每个层次不只有这么多协议，这里只是个范例？）**</code></pre><ul>
-<li>1、The Ethernet protocol is used for NIC card, network interface card to network interface card communications in the same network.  </li>
-<li>2、IP协议（4或6） makes sure that the message gets from the original source to the final destination, whether or not that message is within the same network or has to go across multiple networks</li>
-<li>3、 TCP makes sure that the information, the message gets there reliably</li>
-<li>4、 This case HTTP. HTTP governs the exchange or transfer of HTML</li>
-</ul>
-<h3 id="3-4-Reading-Different-Types-of-Network-Models"><a href="#3-4-Reading-Different-Types-of-Network-Models" class="headerlink" title="3.4 Reading: Different Types of Network Models"></a>3.4 Reading: Different Types of Network Models</h3><p>两种基本类型的模型： 协议模型 &amp; 参考模型</p>
+<h2 id="Task2-Kali-Linux渗透测试介绍"><a href="#Task2-Kali-Linux渗透测试介绍" class="headerlink" title="Task2. Kali Linux渗透测试介绍"></a>Task2. Kali Linux渗透测试介绍</h2><p><strong>*时间有限，暂时跳过这一章视频</strong><br>1.安装文件计算哈希值比对<br>2.U盘启动盘安装<br>  使用官方软件UnitBootin<br>3.制作启动光盘安装</p>
+<p>安装Linux 内核头文件<br>apt-get 基于debian的Linux软件包管理软件  自动连接官网下载源</p>
+<pre><code>apt-get install linux-headers-${uname -r}</code></pre><p>uname -r 查询机器版本</p>
+<p>安装VMTOOLS</p>
+<p><strong>uname -r ：</strong>显示操作系统的发行版号<br><strong>uname -a ：</strong>显示系统名、节点名称、操作系统的发行版号、操作系统版本、运行系统的机器 ID 号。</p>
+<p>apt-get update 连接官网更新软件包索引文件、升级的不是软件包本身，而是索引</p>
+<h2 id="Task3-Kali-Linux安装-持久加密USB安装、熟悉环境、熟悉BASH命令1"><a href="#Task3-Kali-Linux安装-持久加密USB安装、熟悉环境、熟悉BASH命令1" class="headerlink" title="Task3. Kali Linux安装 持久加密USB安装、熟悉环境、熟悉BASH命令1"></a>Task3. Kali Linux安装 持久加密USB安装、熟悉环境、熟悉BASH命令1</h2><p>dmesg  查看系统变化</p>
+<p>###Task4 熟悉环境 Bash命令</p>
 <ul>
-<li>1、协议模型 —— 该模型与特定协议套件结构非常匹配。协议套件包括一组相关协议，这些协议通常提供与数据网络通信所需的所有功能。<strong>TCP/IP模型</strong>是一个协议模型，因为它描述了<strong>TCP/IP套件</strong>中每一层协议上发生的功能。</li>
-<li>2、参考模型 —— 这种类型的模型描述了必须在特定层完成的功能，但没有确切说明应如何完成功能。参考模型并不打算提供足够的细节来精确定义每个协议在每个层上的工作方式。参考模型的主要目的是帮助更清晰地理解网络通信所需的功能和过程。</li>
+<li>登录密码</li>
+<li>TOP10安全工具</li>
 </ul>
-<p>最广为人知的互联网络参考模型是由国际标准化组织（ISO）的开放系统互连项目创建的。它用于数据网络设计，操作规范和故障排除。该模型通常称为OSI模型。<br>下面是关于OSI模型的不同层的更多信息。</p>
-<pre><code>Application 应用层
-The application layer provides the means for end-to-end connectivity between individuals in the human network using data networks.
-
-Presentation 表示层
-The presentation layer provides for common representation of the data transferred between application layer services.
-
-Session 会话层
-The session layer provides services to the presentation layer to organize its dialogue and to manage data exchange.
-
-Transport 传输层
-The transport layer defines services to segment, transfer, and reassemble the data for individual communications between the end devices.
-
-Network 网络层
-The network layer provides services to exchange the individual pieces of data over the network between identified end devices.
-
-Data Link 数据链路层
-The data link layer protocol describes methods for exchanging data frames between devices over a common medium.
-
-Physical 物理层
-The physical layer protocol describes the mechanical, electrical, functional, and procedural means to activate, maintain, and de-activate physical connections for bit transmission to and from a network device.</code></pre><hr>
-<h2 id="4-Working-with-the-OSI-Model"><a href="#4-Working-with-the-OSI-Model" class="headerlink" title="4. Working with the OSI Model"></a>4. Working with the OSI Model</h2><h3 id="4-1-Reading-Dividing-the-Tasks"><a href="#4-1-Reading-Dividing-the-Tasks" class="headerlink" title="4.1 Reading: Dividing the Tasks"></a>4.1 Reading: Dividing the Tasks</h3><p>OSI 模型将网络通信分解为多个过程。每个过程只是较大任务的一小部分。<br>类比汽车制造厂，装配一辆汽车的复杂任务可以分解为多个子任务让其变得更加简单。</p>
-<p>类似的，OSI模型帮助我们在进行故障排除以识别和解决网络问题时关注于一个层。网络团队经常通过OSI模型层的数量来引用网络中发生的不同功能，OSI模型层指定了该功能。例如，为跨媒体传输而对数据位进行编码的过程发生在第1层，即物理层。数据的格式可以通过笔记本电脑或手机中的网络连接进行解释，该格式描述在第2层，即数据链路层。</p>
-<p><img src="http://static.zybuluo.com/Adward-Wang/rk9pkd3xgcjs8lmr4jrqhea7/OSI7.jpg" alt="OSI7.jpg-64.7kB"></p>
-<h3 id="4-2-Reading-Comparing-the-OSI-and-TCP-Models"><a href="#4-2-Reading-Comparing-the-OSI-and-TCP-Models" class="headerlink" title="4.2 Reading: Comparing the OSI and TCP Models"></a>4.2 Reading: Comparing the OSI and TCP Models</h3><pre><code>The OSI model was created in the early 1980’s as a conceptual reference model with seven layers that specify characteristics and standards for the end-to-end communication process. Its goal was the interoperability of different communications systems.</code></pre><p><code>OSI模型</code>是在1980年代初期创建的，作为概念性参考模型，具有七个层，用于指定端到端通信过程的特征和标准。其目标是实现不同通信系统的互操作性。</p>
-<pre><code>The TCP/IP model is another model with only four layers that relate to the OSI layers. This reference model also provides characteristics and standards for end-to-end communications. The TCP/IP model is more of an implementation model and is currently more widely referenced than the OSI model.</code></pre><p><code>TCP / IP模型</code>是另一个只有四个与OSI层相关的层的模型。该参考模型还提供了端到端通信的特性和标准。 TCP / IP模型更多地是一种 <strong>实现模型</strong>，并且与OSI模型相比，目前被更广泛地引用。</p>
-<pre><code>Because TCP/IP is the protocol suite in use for Internet communications, why do we need to learn the OSI model as well?</code></pre><p>因为<code>TCP/IP</code>是用于互联网通信的<strong>协议套件</strong>，为什么我们还需要学习OSI模型?</p>
-<pre><code>The TCP/IP model is a method of visualizing the interactions of the various protocols that make up the TCP/IP protocol suite. It does not describe general functions that are necessary for all networking communications. It describes the networking functions specific to those protocols in use in the TCP/IP protocol suite. For example: At the network access layer, the TCP/IP protocol suite does not specify which protocols to use when transmitting over a physical medium, nor the method of encoding the signals for transmission. OSI Layers 1 and 2 discuss the necessary procedures to access the media and the physical means to send data over a network.</code></pre><p><code>TCP/IP模型</code>是一种可视化构成<code>TCP/IP协议套件</code>的各种协议的交互的方法。它没有描述所有网络通信所必需的一般功能。它描述了特定于<code>TCP/IP协议套件</code>中使用的那些协议的网络功能。例如:在网络访问层，<code>TCP/IP协议套件</code>没有指定在物理介质上传输时使用哪个协议，也没有指定传输信号的编码方法。OSI第1层和第2层讨论访问媒体的必要程序和通过网络发送数据的物理方法。</p>
-<p>The protocols that make up the TCP/IP protocol suite can be described in terms of the OSI reference model. The functions that occur at the Internet layer in the TCP/IP model are contained in the network layer of the OSI Model, as shown in the figure. The transport layer functionality is the same between both models. However, the network access layer and the application layer of the TCP/IP model are further divided in the OSI model to describe discrete functions that must occur at these layers.<br>可以根据<code>OSI参考模型</code>来描述构成<code>TCP / IP协议套件</code>的协议。如图所示，在<code>TCP / IP模型</code>的Internet层发生的功能包含在<code>OSI模型</code>的网络层中。两种模型之间的传输层功能相同。但是，在OSI模型中进一步划分了<code>TCP / IP模型</code>的网络访问层和应用程序层，以描述必须在这些层上发生的离散功能。</p>
-<p><img src="http://static.zybuluo.com/Adward-Wang/x7anv930y81clfijwf4fs8ye/OSI_TCP_IP.jpg" alt="OSI_TCP_IP.jpg-56.6kB"></p>
-<hr>
-<h2 id="5-Protocols-for-Wired-Networks"><a href="#5-Protocols-for-Wired-Networks" class="headerlink" title="5. Protocols for Wired Networks"></a>5. Protocols for Wired Networks</h2><h3 id="5-1-Reading-Why-Ethernet"><a href="#5-1-Reading-Why-Ethernet" class="headerlink" title="5.1 Reading: Why Ethernet"></a>5.1 Reading: Why Ethernet</h3><p>在网络的早期，每个供应商都使用他们自己的专有方法来互连网络设备和网络协议。如果从不同的供应商购买设备，并不能保证这些设备可以协同工作。来自一个供应商的设备可能无法与来自另一个供应商的设备通信。</p>
-<p>随着网络的日益普及，各种标准应运而生，这些标准定义了不同供应商的网络设备操作规则。标准在很多方面都有利于网络:</p>
+<p>1.aircrack-ng 无线攻击<br>2.burpsuite 基于Web渗透测试（手动）<br>3.hydra john 密码攻击<br>4.maltego 信息收集（图形化界面）<br>5.metasploit 框架<br>6.nmap网络扫描工具<br>7.owasp-zap 基于web<br>8.Sqlmap 注入<br>9.wireshark 网络数据包</p>
 <ul>
-<li>方便设计</li>
-<li>简化产品开发</li>
-<li>促进竞争</li>
-<li>提供一致的互连</li>
-<li>促进培训</li>
-<li>为客户提供更多供应商选择</li>
+<li>字体调整</li>
 </ul>
-<p>目前尚无官方的局域网标准协议，但随着时间的流逝，以太网技术已经变得比其他技术更为普遍。 <strong>以太网协议</strong>定义了如何格式化数据以及如何通过<strong>有线网络</strong>传输数据。以太网标准指定了在OSI模型的第1层和第2层运行的协议。如图所示，它已经成为事实上的标准，这意味着以太网是几乎所有<strong>有线局域网</strong>使用的技术。</p>
-<p><img src="http://static.zybuluo.com/Adward-Wang/darf7635b04vaze25vod75q7/Why_Ethernet.jpg" alt="Why_Ethernet.jpg-40.6kB"></p>
-<h3 id="5-2-Reading-Ethernet-is-Constantly-Evolving"><a href="#5-2-Reading-Ethernet-is-Constantly-Evolving" class="headerlink" title="5.2 Reading: Ethernet is Constantly Evolving"></a>5.2 Reading: Ethernet is Constantly Evolving</h3><pre><code>The Institute of Electrical and Electronic Engineers, or IEEE (pronounced eye-triple-e), maintains the networking standards, including Ethernet and wireless standards. IEEE committees are responsible for approving and maintaining the standards for connections, media requirements and communications protocols. Each technology standard is assigned a number that refers to the committee that is responsible for approving and maintaining the standard. The committee responsible for the Ethernet standards is 802.3.</code></pre><p>电气和电子工程师协会（IEEE，发音为eye-triple-e）维护网络标准，包括以太网和无线标准。IEEE委员会负责批准和维护连接，媒体要求和通信协议的标准。每个技术标准都分配有一个编号，该编号表示负责批准和维护该标准的委员会。负责以太网标准的委员会是<code>802.3</code>。</p>
-<pre><code>Since the creation of Ethernet in 1973, standards have evolved for specifying faster and more flexible versions of the technology. This ability for Ethernet to improve over time is one of the main reasons that it has become so popular. Each version of Ethernet has an associated standard. For example, 802.3 100BASE-T represents the 100 Megabit Ethernet using twisted-pair cable standards. The standard notation translates as:
-
-• 100 is the speed in Mb/s
-• BASE stands for baseband transmission
-• T stands for the type of cable, in this case, twisted-pair.</code></pre><p>1973年以太网诞生, 标准不断演变，更快速度，更灵活的版本推出。以太网的这种随时间推移不断改进的能力是它变得如此受欢迎的主要原因之一。每个版本的以太网都有一个相关的标准。例如，<code>802.3 100BASE-T</code>表示使用双绞线标准的100兆以太网。标准符号翻译为:</p>
+<p>1.gnome-tweak-tool工具<br>终端输入 gnome-tweaks即可</p>
 <ul>
-<li>100Mb/s 带宽</li>
-<li>BASE代表基带传输</li>
-<li>T代表电缆的类型，在这种情况下为双绞线。</li>
+<li>监视网络流量</li>
 </ul>
-<h3 id="5-3-Reading-Ethernet-Addressing"><a href="#5-3-Reading-Ethernet-Addressing" class="headerlink" title="5.3 Reading: Ethernet Addressing"></a>5.3 Reading: Ethernet Addressing</h3><p>所有通信都需要一种方法来标识源和目标。而人际交流中的来源和目的地由姓名表示。<br>（类比）当别人叫你的名字时，你会听到并作出回应，而听到消息的其他人则会忽略该消息，因为并不是叫他们。</p>
-<p>在以太网中，有一种类似的方法来标识源主机和目标主机。为连接到以太网的每个主机分配一个物理地址，该地址用于标识网络上的主机。</p>
-<p>观看下面的动画，了解如何在主机之间发送以太网帧。</p>
-<p><img src="http://static.zybuluo.com/Adward-Wang/4xhvsaf03b5656u5lvfiw2jn/Ethernet_Addressing.gif" alt="Ethernet_Addressing.gif-381.1kB"></p>
-<h3 id="5-4-Video-Ethernet-Addressing"><a href="#5-4-Video-Ethernet-Addressing" class="headerlink" title="5.4 Video: Ethernet Addressing"></a>5.4 Video: Ethernet Addressing</h3><h3 id="5-5-Lab-Determine-the-MAC-Address-of-a-Host"><a href="#5-5-Lab-Determine-the-MAC-Address-of-a-Host" class="headerlink" title="5.5 Lab-Determine the MAC Address of a Host"></a>5.5 Lab-Determine the MAC Address of a Host</h3><p>六个字节组成<br>前三个为 <code>组织唯一标识符</code> OUI  (Organizationally unique identifier)； 我的是 94-57-A5 ，惠普生产<br>后三个为 <code>接口唯一标识符</code></p>
+<p><strong>安装netspeed</strong></p>
+<pre><code>https://blog.csdn.net/penge199761/article/details/79140789</code></pre><ul>
+<li>强行终止程序</li>
+<li>文件目录<br>按功能分类目录 bin、boot、dev、etc、home、lib等</li>
+<li>共享文件</li>
+</ul>
+<p>##熟悉操作Bash命令</p>
+<ul>
+<li><p>ls<br>蓝色-目录  白色-普通文件 绿色-可执行文件  红色-压缩包<br>ls -l 以长格式显示  注意前十个字符 1+9<br>ls -la 多出来以点开始的文件（隐藏文件）<br>ls -lh 以人易读方式显示文件大小 </p>
+</li>
+<li><p>cd  和windows相同<br>cd. 到当前目录<br>cd.. 当上一级目录</p>
+</li>
+<li><p>pwd 查看当前工作目录</p>
+</li>
+<li><p>clear 清空</p>
+</li>
+<li><p>cat 查看文件</p>
+</li>
+<li><p>more 加文件目录 分段查看  q退出查看</p>
+</li>
+<li><p>less 加文件目录 不会显示百分比 q退出查看</p>
+</li>
+<li><p>tail 加文件目录 默认文件最后十行信息<br>tail -n 加文件目录 显示最后n行信息<br>配合 watch命令使用<br>watch -n 2 tail -20 加文件目录 /var/log/messages ，每隔两秒钟刷新查看</p>
+</li>
+<li><p>cp rm 针对文件<br>  rm 删除文件<br>  cp 复制  cp ps ps1 //将ps复制成ps1,针对文件<br>  cp -r Agent/ A   //将Agent文件夹复制成A<br>  rm -r A     //删除文件夹A</p>
+</li>
+<li><p>top 命令<br>查看进程及各种信息、</p>
+</li>
+<li><p>ps命令<br>专门用来查看各种进程信息 + -ef显示更为详细信息</p>
+</li>
+<li><p>grep 命令 筛选信息<br>cat /etc/passwd<br>grep ssh /etc/passwd    //筛选含ssh字符串的行</p>
+</li>
+<li><p>ifconfig 网络<br>ifconfig eth0 down 关闭命令<br>ifconfig eth0 up 打开</p>
+</li>
+<li><p>netstat 查看网络连接信息<br>netstat -pantu 查看与哪些服务器 tcp udp连接</p>
+</li>
+<li><p>管道<br>将多个命令在Linux 同一行输入<br>同一行命令通过管道方式 每个命令间不同关系<br>netstat -pantu |egrep -v ‘0.0.0.0|:::’ 排除？？</p>
+</li>
+<li><p>mount 挂载<br>mount -o loop kali.ios /media/cdrom<br>挂载到目录 查看文件内容</p>
+</li>
+<li><p>dmesg<br>不太懂</p>
+</li>
+<li><p>find 命令<br>查找文件、目录 位置<br>find / -name nmap  从根目录查找名为nmap的文件<br>find / -iname nmap //不区分大小写<br>find . -name ps*    以ps开头的文件</p>
+</li>
+<li><p>whereis 命令<br>查找范围较小 但速度块<br>whereis -b nmap //查找二进制文件</p>
+</li>
+<li><p>vi 命令<br>文本编辑器 vim简称<br>wq 写并退出<br>命令模式下输入内容编辑<br>i 插入<br>输入：或者/即可进入命令模式</p>
+</li>
+<li><p>shell 脚本<br>vi 1.sh<br>#!/bin/bash<br>#! 是所有linux脚本文件开头的符号, 后面的/bin/bash表示是使用/bin/bash为解释器来执行本文件的脚本<br>esc :wq 保存加退出<br>chmod +x 1.sh 增加可执行权限<br>./1.sh 执行脚本</p>
+<p>  #!/bin/bash<br>  for n in seq 9<br>  do<br>  for m in seq $n</p>
+</li>
+</ul>
+<p>##网络配置</p>
+<ul>
+<li>ifconfig<br>ifconfig eth0 指定新ip/子网掩码</li>
+</ul>
+<p>指定网关  route add default gw 192.168.1.1<br> ip 地址 DNS 网关 ，这些。。。。我都不会。。。</p>
+<ul>
+<li>更新升级 <ul>
+<li>apt-get update 更新索引文件</li>
+<li>apt-get upgrade 更新软件包文件</li>
+<li>apt-get update –fix-missing 更新错误索引</li>
+<li>vi /etc/apt/sources.list  更改更新源</li>
+<li>安装软件包</li>
+</ul>
+</li>
+<li>库  apt-get命令</li>
+<li>安装适合的工具软件<br>apt-get install smplayer  //播放器<br>ibus ibus-pinyin<br> flashplugin freemind chromium monodevelop mono-gmcs-y<ul>
+<li>FireFox浏览器插件<br>flashgot | autoproxy |coocie Importer导入cookie<br>cookie manager//   download yotube videos as mp4<br>firebug //  flagfox、   </li>
+</ul>
+</li>
+</ul>
 
             </div>
             <hr />
@@ -736,9 +728,9 @@ The physical layer protocol describes the mechanical, electrical, functional, an
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Network Protocols and Architecture (1)》
+                    《Kali Linux安全测试笔记》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/05/24/network-protocols-architecture-1/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/09/30/kali-linux-an-quan-ce-shi-bi-ji/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Adward
             </a> 采用
@@ -779,7 +771,7 @@ The physical layer protocol describes the mechanical, electrical, functional, an
         repo: 'EnforcerK.github.io',
         owner: 'EnforcerK',
         admin: "Adward_Wang",
-        id: '2020/05/24/network-protocols-architecture-1/',
+        id: '2019/09/30/kali-linux-an-quan-ce-shi-bi-ji/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1062,52 +1054,50 @@ The physical layer protocol describes the mechanical, electrical, functional, an
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/24/network-protocols-architecture-1/">
+                <a href="/2020/02/16/sort-algorithms/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Network Protocols and Architecture (1)">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="十大经典排序算法整理汇总（附代码）">
                         
-                        <span class="card-title">Network Protocols and Architecture (1)</span>
+                        <span class="card-title">十大经典排序算法整理汇总（附代码）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一、Week11. Establishing the Rules1.1 Reading: About This Course有几个这个课程提出的学习目标，等学完用来检测一下自己的学习情况。At the end of this course,
+                            本文整理并总结了十大经典的排序算法（冒泡排序、选择排序、插入排序、快速排序、归并排序、希尔排序、计数排序、基数排序、桶排序、堆排序）的时间复杂度、空间复杂度等性质。
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-24
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-16
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/计算机网络/" class="post-category" target="_blank">
-                                    计算机网络
+                            <a href="/categories/编程算法/" class="post-category" target="_blank">
+                                    编程算法
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/网络基础/" target="_blank">
-                        <span class="chip bg-color">网络基础</span>
+                    <a href="/tags/leetcode/" target="_blank">
+                        <span class="chip bg-color">leetcode</span>
                     </a>
                     
-                    <a href="/tags/Cisco/" target="_blank">
-                        <span class="chip bg-color">Cisco</span>
+                    <a href="/tags/算法/" target="_blank">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
                 </div>
@@ -1118,49 +1108,52 @@ The physical layer protocol describes the mechanical, electrical, functional, an
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
             </div>
             <div class="card">
-                <a href="/2020/04/15/title-za-ji-0415/">
+                <a href="/2019/09/30/kali-linux-an-quan-ce-shi-bi-ji/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="杂记 0415">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Kali Linux安全测试笔记">
                         
-                        <span class="card-title">杂记 0415</span>
+                        <span class="card-title">Kali Linux安全测试笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            无聊之人 无聊之语
+                            Kali Linux安全测试笔记
+Task1. Kali Linux渗透测试介绍###渗透测试标准——PETS1.前期交互阶段2.情报收集阶段3.威胁建模阶段4.漏洞分析阶段5.渗透攻击阶段6.后渗透测试阶段7.渗透测试报告
+###安全测试
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-15
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-30
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/浮生日记/" class="post-category" target="_blank">
-                                    浮生日记
+                            <a href="/categories/网络安全/" class="post-category" target="_blank">
+                                    网络安全
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/闲人闲语/" target="_blank">
-                        <span class="chip bg-color">闲人闲语</span>
+                    <a href="/tags/Linux/" target="_blank">
+                        <span class="chip bg-color">Linux</span>
                     </a>
                     
-                    <a href="/tags/杂记/" target="_blank">
-                        <span class="chip bg-color">杂记</span>
+                    <a href="/tags/安全测试/" target="_blank">
+                        <span class="chip bg-color">安全测试</span>
                     </a>
                     
                 </div>

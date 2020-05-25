@@ -83,6 +83,33 @@
     </entry>
     
     
+    
+    <entry>
+      <title>Kali Linux安全测试笔记</title>
+      <link href="/2019/09/30/kali-linux-an-quan-ce-shi-bi-ji/"/>
+      <url>/2019/09/30/kali-linux-an-quan-ce-shi-bi-ji/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Kali-Linux安全测试笔记"><a href="#Kali-Linux安全测试笔记" class="headerlink" title="Kali Linux安全测试笔记"></a>Kali Linux安全测试笔记</h1><hr><h2 id="Task1-Kali-Linux渗透测试介绍"><a href="#Task1-Kali-Linux渗透测试介绍" class="headerlink" title="Task1. Kali Linux渗透测试介绍"></a>Task1. Kali Linux渗透测试介绍</h2><p>###渗透测试标准——PETS<br>1.前期交互阶段<br>2.情报收集阶段<br>3.威胁建模阶段<br>4.漏洞分析阶段<br>5.渗透攻击阶段<br>6.后渗透测试阶段<br>7.渗透测试报告</p><p>###安全测试误区</p><ul><li>扫描器就是一切<ul><li>忽视业务逻辑中的漏洞</li></ul></li></ul><p>###Kali Linux 介绍</p><ol><li>FHS标准目录结构</li><li>定制内核</li><li>基于Debian的Linux版本</li><li>支持ARM和手机平台<br>手机上mapHunter???</li></ol><p>###Kali Linux 策略</p><ul><li>ROOT 用户策略 （默认ROOT）</li><li>网络服务策略 （默认网络服务关闭）<br>需手动启动</li><li>更新升级策略</li></ul><p>###关于本教程</p><ul><li>Kali 很强大，但不是全部</li><li>实践是最好的老师</li><li>自行补充所需安全工具，独一无二的Kali</li></ul><h2 id="Task2-Kali-Linux渗透测试介绍"><a href="#Task2-Kali-Linux渗透测试介绍" class="headerlink" title="Task2. Kali Linux渗透测试介绍"></a>Task2. Kali Linux渗透测试介绍</h2><p><strong>*时间有限，暂时跳过这一章视频</strong><br>1.安装文件计算哈希值比对<br>2.U盘启动盘安装<br>  使用官方软件UnitBootin<br>3.制作启动光盘安装</p><p>安装Linux 内核头文件<br>apt-get 基于debian的Linux软件包管理软件  自动连接官网下载源</p><pre><code>apt-get install linux-headers-${uname -r}</code></pre><p>uname -r 查询机器版本</p><p>安装VMTOOLS</p><p><strong>uname -r ：</strong>显示操作系统的发行版号<br><strong>uname -a ：</strong>显示系统名、节点名称、操作系统的发行版号、操作系统版本、运行系统的机器 ID 号。</p><p>apt-get update 连接官网更新软件包索引文件、升级的不是软件包本身，而是索引</p><h2 id="Task3-Kali-Linux安装-持久加密USB安装、熟悉环境、熟悉BASH命令1"><a href="#Task3-Kali-Linux安装-持久加密USB安装、熟悉环境、熟悉BASH命令1" class="headerlink" title="Task3. Kali Linux安装 持久加密USB安装、熟悉环境、熟悉BASH命令1"></a>Task3. Kali Linux安装 持久加密USB安装、熟悉环境、熟悉BASH命令1</h2><p>dmesg  查看系统变化</p><p>###Task4 熟悉环境 Bash命令</p><ul><li>登录密码</li><li>TOP10安全工具</li></ul><p>1.aircrack-ng 无线攻击<br>2.burpsuite 基于Web渗透测试（手动）<br>3.hydra john 密码攻击<br>4.maltego 信息收集（图形化界面）<br>5.metasploit 框架<br>6.nmap网络扫描工具<br>7.owasp-zap 基于web<br>8.Sqlmap 注入<br>9.wireshark 网络数据包</p><ul><li>字体调整</li></ul><p>1.gnome-tweak-tool工具<br>终端输入 gnome-tweaks即可</p><ul><li>监视网络流量</li></ul><p><strong>安装netspeed</strong></p><pre><code>https://blog.csdn.net/penge199761/article/details/79140789</code></pre><ul><li>强行终止程序</li><li>文件目录<br>按功能分类目录 bin、boot、dev、etc、home、lib等</li><li>共享文件</li></ul><p>##熟悉操作Bash命令</p><ul><li><p>ls<br>蓝色-目录  白色-普通文件 绿色-可执行文件  红色-压缩包<br>ls -l 以长格式显示  注意前十个字符 1+9<br>ls -la 多出来以点开始的文件（隐藏文件）<br>ls -lh 以人易读方式显示文件大小 </p></li><li><p>cd  和windows相同<br>cd. 到当前目录<br>cd.. 当上一级目录</p></li><li><p>pwd 查看当前工作目录</p></li><li><p>clear 清空</p></li><li><p>cat 查看文件</p></li><li><p>more 加文件目录 分段查看  q退出查看</p></li><li><p>less 加文件目录 不会显示百分比 q退出查看</p></li><li><p>tail 加文件目录 默认文件最后十行信息<br>tail -n 加文件目录 显示最后n行信息<br>配合 watch命令使用<br>watch -n 2 tail -20 加文件目录 /var/log/messages ，每隔两秒钟刷新查看</p></li><li><p>cp rm 针对文件<br>  rm 删除文件<br>  cp 复制  cp ps ps1 //将ps复制成ps1,针对文件<br>  cp -r Agent/ A   //将Agent文件夹复制成A<br>  rm -r A     //删除文件夹A</p></li><li><p>top 命令<br>查看进程及各种信息、</p></li><li><p>ps命令<br>专门用来查看各种进程信息 + -ef显示更为详细信息</p></li><li><p>grep 命令 筛选信息<br>cat /etc/passwd<br>grep ssh /etc/passwd    //筛选含ssh字符串的行</p></li><li><p>ifconfig 网络<br>ifconfig eth0 down 关闭命令<br>ifconfig eth0 up 打开</p></li><li><p>netstat 查看网络连接信息<br>netstat -pantu 查看与哪些服务器 tcp udp连接</p></li><li><p>管道<br>将多个命令在Linux 同一行输入<br>同一行命令通过管道方式 每个命令间不同关系<br>netstat -pantu |egrep -v ‘0.0.0.0|:::’ 排除？？</p></li><li><p>mount 挂载<br>mount -o loop kali.ios /media/cdrom<br>挂载到目录 查看文件内容</p></li><li><p>dmesg<br>不太懂</p></li><li><p>find 命令<br>查找文件、目录 位置<br>find / -name nmap  从根目录查找名为nmap的文件<br>find / -iname nmap //不区分大小写<br>find . -name ps*    以ps开头的文件</p></li><li><p>whereis 命令<br>查找范围较小 但速度块<br>whereis -b nmap //查找二进制文件</p></li><li><p>vi 命令<br>文本编辑器 vim简称<br>wq 写并退出<br>命令模式下输入内容编辑<br>i 插入<br>输入：或者/即可进入命令模式</p></li><li><p>shell 脚本<br>vi 1.sh<br>#!/bin/bash<br>#! 是所有linux脚本文件开头的符号, 后面的/bin/bash表示是使用/bin/bash为解释器来执行本文件的脚本<br>esc :wq 保存加退出<br>chmod +x 1.sh 增加可执行权限<br>./1.sh 执行脚本</p><p>  #!/bin/bash<br>  for n in seq 9<br>  do<br>  for m in seq $n</p></li></ul><p>##网络配置</p><ul><li>ifconfig<br>ifconfig eth0 指定新ip/子网掩码</li></ul><p>指定网关  route add default gw 192.168.1.1<br> ip 地址 DNS 网关 ，这些。。。。我都不会。。。</p><ul><li>更新升级 <ul><li>apt-get update 更新索引文件</li><li>apt-get upgrade 更新软件包文件</li><li>apt-get update –fix-missing 更新错误索引</li><li>vi /etc/apt/sources.list  更改更新源</li><li>安装软件包</li></ul></li><li>库  apt-get命令</li><li>安装适合的工具软件<br>apt-get install smplayer  //播放器<br>ibus ibus-pinyin<br> flashplugin freemind chromium monodevelop mono-gmcs-y<ul><li>FireFox浏览器插件<br>flashgot | autoproxy |coocie Importer导入cookie<br>cookie manager//   download yotube videos as mp4<br>firebug //  flagfox、   </li></ul></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络安全 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> 安全测试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
   
   
 </search>
