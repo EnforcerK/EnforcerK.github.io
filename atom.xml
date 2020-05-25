@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://enforcerk.xyz/"/>
-  <updated>2020-05-24T15:32:46.374Z</updated>
+  <updated>2020-05-25T17:57:12.841Z</updated>
   <id>https://enforcerk.xyz/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Network Protocols and Architecture (2)</title>
+    <link href="https://enforcerk.xyz/2020/05/26/network-protocols-architecture-2/"/>
+    <id>https://enforcerk.xyz/2020/05/26/network-protocols-architecture-2/</id>
+    <published>2020-05-25T17:57:23.000Z</published>
+    <updated>2020-05-25T17:57:12.841Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;In this module, you will learn how data frames are created and processed by hosts and switches will be explained. You will
+        
+      
+    
+    </summary>
+    
+      <category term="计算机网络" scheme="https://enforcerk.xyz/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+      <category term="网络基础" scheme="https://enforcerk.xyz/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
+    
+      <category term="Cisco" scheme="https://enforcerk.xyz/tags/Cisco/"/>
+    
+  </entry>
   
   <entry>
     <title>Network Protocols and Architecture (1)</title>
