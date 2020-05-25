@@ -4,15 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="杂记 0415, 被捕の瓜子Blog">
+    <meta name="keywords" content="数据库粗略回顾（一）, 被捕の瓜子Blog">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="貌似很久没更博客了，这些天一直忙着毕业论文的事，虽然现在还没弄好，但我觉得快了（又是我觉得，手动狗头）
-
-01 读书有感昨天在看一本书时，上面写到了这么一段话：
-
-对于计算机开发来说，懂得底层原理，这是技术能力；懂得算法参数，这是方法论。这">
+    <meta name="description" content="本科阶段已经学习过一个学期的数据库，但是很多理论性的知识因为很久不用所以忘得差不多了，现特抽出几天时间简单回顾下。一、关系数据库概述数据库作为一种专门管理数据的软件。应用程序不需要自己管理数据，而是通过数据库软件提供的接口来读写数据。至于数">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>杂记 0415 | 被捕の瓜子Blog</title>
+    <title>数据库粗略回顾（一） | 被捕の瓜子Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -270,13 +266,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        杂记 0415
+                        数据库粗略回顾（一）
                     </div>
                 </div>
             </div>
@@ -387,12 +383,12 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/闲人闲语/" target="_blank">
-                            <span class="chip bg-color">闲人闲语</span>
+                        <a href="/tags/MySQL/" target="_blank">
+                            <span class="chip bg-color">MySQL</span>
                         </a>
                         
-                        <a href="/tags/杂记/" target="_blank">
-                            <span class="chip bg-color">杂记</span>
+                        <a href="/tags/SQL/" target="_blank">
+                            <span class="chip bg-color">SQL</span>
                         </a>
                         
                     </div>
@@ -403,8 +399,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/浮生日记/" class="post-category" target="_blank">
-                            浮生日记
+                        <a href="/categories/数据库/" class="post-category" target="_blank">
+                            数据库
                         </a>
                         
                     </div>
@@ -415,7 +411,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-15
+                    2020-03-01
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -429,14 +425,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    5.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    19 分
                 </div>
                 
                 
@@ -452,28 +448,247 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>貌似很久没更博客了，这些天一直忙着毕业论文的事，虽然现在还没弄好，但我觉得快了（又是我觉得，手动狗头）</p>
+                <pre><code>本科阶段已经学习过一个学期的数据库，但是很多理论性的知识因为很久不用所以忘得差不多了，现特抽出几天时间简单回顾下。</code></pre><h2 id="一、关系数据库概述"><a href="#一、关系数据库概述" class="headerlink" title="一、关系数据库概述"></a>一、关系数据库概述</h2><p>数据库作为一种专门管理数据的软件。应用程序不需要自己管理数据，而是通过数据库软件提供的<strong>接口</strong>来读写数据。至于数据本身如何存储到文件，那是数据库软件的事情，应用程序自己并不关心：</p>
+<pre><code>┌──────────────┐
+│ application  │
+└──────────────┘
+       ▲│
+       ││
+   read││write
+       ││
+       │▼
+┌──────────────┐
+│   database   │
+└──────────────┘</code></pre><p>这样一来，编写应用程序的时候，数据读写的功能就被大大地简化了。</p>
+<h3 id="数据模型"><a href="#数据模型" class="headerlink" title="数据模型"></a>数据模型</h3><p>三种</p>
+<ul>
+<li>层次模型</li>
+<li>网状模型</li>
+<li><strong>关系模型</strong></li>
+</ul>
+<p><strong>层次模型</strong>就是以“上下级”的层次关系来组织数据的一种方式，层次模型的数据结构看起来就像一颗树：</p>
+<pre><code>            ┌─────┐
+            │     │
+            └─────┘
+               │
+       ┌───────┴───────┐
+       │               │
+    ┌─────┐         ┌─────┐
+    │     │         │     │
+    └─────┘         └─────┘
+       │               │
+   ┌───┴───┐       ┌───┴───┐
+   │       │       │       │
+┌─────┐ ┌─────┐ ┌─────┐ ┌─────┐
+│     │ │     │ │     │ │     │
+└─────┘ └─────┘ └─────┘ └─────┘</code></pre><p><strong>网状模型</strong>把每个数据节点和其他很多节点都连接起来，它的数据结构看起来就像很多城市之间的路网：</p>
+<pre><code>     ┌─────┐      ┌─────┐
+   ┌─│     │──────│     │──┐
+   │ └─────┘      └─────┘  │
+   │    │            │     │
+   │    └──────┬─────┘     │
+   │           │           │
+┌─────┐     ┌─────┐     ┌─────┐
+│     │─────│     │─────│     │
+└─────┘     └─────┘     └─────┘
+   │           │           │
+   │     ┌─────┴─────┐     │
+   │     │           │     │
+   │  ┌─────┐     ┌─────┐  │
+   └──│     │─────│     │──┘
+      └─────┘     └─────┘</code></pre><p><strong>关系模型</strong>把数据看作是一个二维表格，任何数据都可以通过行号+列号来唯一确定，<strong><strong>它的数据模型看起来就是一个Excel表</strong></strong>：</p>
+<pre><code>┌─────┬─────┬─────┬─────┬─────┐
+│     │     │     │     │     │
+├─────┼─────┼─────┼─────┼─────┤
+│     │     │     │     │     │
+├─────┼─────┼─────┼─────┼─────┤
+│     │     │     │     │     │
+├─────┼─────┼─────┼─────┼─────┤
+│     │     │     │     │     │
+└─────┴─────┴─────┴─────┴─────┘</code></pre><h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><p>对于一个关系表，除了定义每一列的名称外，还需要定义每一列的数据类型。关系数据库支持的标准数据类型包括数值、字符串、时间等：</p>
+<pre><code>名称                  类型            说明
+
+INT                    整型            4字节整数类型，范围约+/-21亿
+BIGINT             长整型           8字节整数类型，范围约+/-922亿亿
+REAL                浮点型           4字节浮点数，范围约+/-1038
+DOUBLE                浮点型           8字节浮点数，范围约+/-10308
+DECIMAL(M,N)        高精度小数    由用户指定精度的小数，例如，DECIMAL(20,10)表示一共20位，其中小数10位，通常用于财务计算
+CHAR(N)    定长字符串    存储指定长度的字符串，例如，CHAR(100)总是存储100个字符的字符串
+VARCHAR(N)            变长字符串    存储可变长度的字符串，例如，VARCHAR(100)可以存储0~100个字符的字符串
+BOOLEAN                布尔类型    存储True或者False
+DATE                日期类型    存储日期，例如，2018-06-22
+TIME                时间类型    存储时间，例如，12:20:59
+DATETIME            日期和时间类型    存储日期+时间，例如，2018-06-22 12:20:59</code></pre><p>上述是常用数据类型，很多数据类型还有别名，REAL ——&gt; FLOAT(24), 还有一些不常用的数据类型TINYINT(0~255)、JSON等等。</p>
+<p>选择数据类型的时候，要根据业务规则选择合适的类型。通常来说，BIGINT能满足整数存储的需求，VARCHAR(N)能满足字符串存储的需求，这两种类型是使用最广泛的。</p>
+<h3 id="主流数据库介绍"><a href="#主流数据库介绍" class="headerlink" title="主流数据库介绍"></a>主流数据库介绍</h3><p>目前，主流的关系数据库主要分为以下几类：<br>1.<strong>商用数据库</strong>，例如：Oracle，SQL Server，DB2等；<br>2.<strong>开源数据库</strong>，例如：MySQL，PostgreSQL等；<br>3.<strong>桌面数据库</strong>，以微软Access为代表，适合桌面应用程序使用；<br>4.<strong>嵌入式数据库</strong>，以Sqlite为代表，适合手机应用和桌面程序。</p>
+<h3 id="SQL介绍"><a href="#SQL介绍" class="headerlink" title="SQL介绍"></a>SQL介绍</h3><p>SQL是结构化查询语言的缩写，用来访问和操作数据库系统。不同的数据库，都支持SQL。</p>
+<p>各个不同的数据库对标准的SQL支持不太一致。并且，大部分数据库都在标准的SQL上做了扩展。也就是说，如果只使用标准SQL，<strong>理论上所有数据库都可以支持</strong>，但如果使用某个特定数据库的扩展SQL，换一个数据库就不能执行了。例如，Oracle把自己扩展的SQL称为PL/SQL，Microsoft把自己扩展的SQL称为T-SQL。</p>
+<p><strong>现实情况</strong>是，如果我们只使用标准SQL的核心功能，那么所有数据库通常都可以执行。不常用的SQL功能，不同的数据库支持的程度都不一样。而各个数据库支持的各自扩展的功能，通常我们把它们称之为“方言”。</p>
+<p>总的来说，SQL语言定义了这么几种操作数据库的能力：</p>
+<p>DDL：Data Definition Language<br>DDL允许用户定义数据，也就是<strong>创建表、删除表、修改表结构</strong>这些操作。通常，DDL由数据库管理员执行。</p>
+<p>DML：Data Manipulation Language<br>DML为用户提供<strong>添加、删除、更新数据</strong>的能力，这些是应用程序对数据库的日常操作。</p>
+<p>DQL：Data Query Language<br>DQL允许<strong>用户查询数据</strong>，这也是通常最频繁的数据库日常操作。</p>
+<h3 id="语法特点"><a href="#语法特点" class="headerlink" title="语法特点"></a>语法特点</h3><p>SQL语言关键字不区分大小写，但一般 我们规定SQL关键字大写，表名、列名均使用小写。</p>
 <hr>
-<h3 id="01-读书有感"><a href="#01-读书有感" class="headerlink" title="01 读书有感"></a>01 读书有感</h3><p>昨天在看一本书时，上面写到了这么一段话：</p>
-<blockquote>
-<p>对于计算机开发来说，懂得底层原理，这是技术能力；懂得算法参数，这是方法论。这两者都不是工程能力。而工程能力是把一堆杂乱的数据整理成结构化数据，并运用算法对数据进行加工，得到某些结论。</p>
-</blockquote>
-<p>我被这句话触动了许久，因为我觉得一直以来自己的学习陷入了怪区，零散化没有体系，又或是学习没有目的性，始终抱着学生思维：<code>即做一件事我要从他的相关基础开始学习，等学好了我再去做</code>，其实知识永远学不完的，理论知识只有在实践中才能出真知。 做一件个项目，做一件事，你得清楚地知道你需要哪些知识，哪些知识是重要的，哪些是次要的，做成一个项目你需要做哪些相关的准备工作下一步怎么做等等，这些都需要去考虑，千万不能想着学个透彻，当然，不是说学深入不好，而是有时候面临时间、人力问题，等你准备好了黄花菜都凉了，我觉得那应该叫自我感动，其实是很低效的准备。</p>
-<p><strong>做一件事或者项目应该动手动脑子想想思路</strong>，没有思路可以去网上借鉴别人，再不行找前辈大佬去文，我觉得信息时代带给我最大的便利就是 很多问题我都可以在网上找到答案或者找到人去寻求帮助。</p>
-<p>再之就是，我想了许久，本科学习究竟给我带来了什么？我觉得就是素养、理论基础以及对计算机的热爱，工程能力学校并没有教或者说我学的不够好。所以我现在还是需要去不断提高自己的实践能力，光谈理论都是花架子。企业需要的是可以解决问题有工程能力的人才，而不是会考试或者说谈理论的人。对，我应该早点想清楚这一点的，可是身边也没有人指点我，或许人在某个阶段总会迷茫困惑吧。</p>
+<h2 id="二、安装MySQL"><a href="#二、安装MySQL" class="headerlink" title="二、安装MySQL"></a>二、安装MySQL</h2><pre><code>开源关系数据库，现Oracle 旗下产品</code></pre><p>和其他关系数据库有所不同的是，MySQL本身实际上只是一个SQL接口，它的内部还包含了多种数据引擎，常用的包括：</p>
+<ul>
+<li>InnoDB：由Innobase Oy公司开发的一款支持事务的数据库引擎，2006年被Oracle收购；</li>
+<li>MyISAM：MySQL早期集成的默认数据库引擎，不支持事务。</li>
+</ul>
+<p>MySQL接口和数据库引擎的关系就好比某某浏览器和浏览器引擎（IE引擎或Webkit引擎）的关系。<strong>对用户而言，切换浏览器引擎不影响浏览器界面，<em>切换MySQL引擎不影响自己写的应用程序使用MySQL的接口。</em></strong></p>
+<p>使用MySQL时，不同的表还可以使用不同的数据库引擎。如果你不知道应该采用哪种引擎，记住总是选择InnoDB就好了。</p>
+<p>基于MySQL的衍生版本：MariaDB、Aurora、PolarDB .</p>
+<p>MySQL官方版版本： </p>
+<ul>
+<li><p>Community Edition：社区开源版本，免费；</p>
+</li>
+<li><p>Standard Edition：标准版；</p>
+</li>
+<li><p>Enterprise Edition：企业版；</p>
+</li>
+<li><p>Cluster Carrier Grade Edition：集群版。</p>
+<pre><code> 基本SQL功能相同</code></pre></li>
+</ul>
+<h3 id="安装MySQL"><a href="#安装MySQL" class="headerlink" title="安装MySQL"></a>安装MySQL</h3><p>网 址：<a href="https://dev.mysql.com/downloads/mysql/" target="_blank" rel="noopener">https://dev.mysql.com/downloads/mysql/</a></p>
+<p>Debian和Ubuntu用户可以简单地通过命令</p>
+<pre><code>apt-get install mysql-server</code></pre><p>安装最新的MySQL版本。</p>
+<h3 id="运行MySQL"><a href="#运行MySQL" class="headerlink" title="运行MySQL"></a>运行MySQL</h3><pre><code>MySQL安装后会自动在后台运行。为了验证MySQL安装是否正确，我们需要通过mysql这个命令行程序来连接MySQL服务器。</code></pre><p>在命令提示符下输入<code>mysql -u root -p</code>，然后输入口令，如果一切正确，就会连接到MySQL服务器，同时提示符变为mysql&gt;。</p>
+<p>输入exit退出MySQL命令行。注意，<strong>MySQL服务器仍在后台运行。</strong></p>
 <hr>
-<h3 id="02-观影有感"><a href="#02-观影有感" class="headerlink" title="02 观影有感"></a>02 观影有感</h3><p>前几天，看了一部电影解说，里面有一句话让我印象很深，我就把记了下来。</p>
-<blockquote>
-<p>就好像你是一只拼尽全力从粪坑里爬出来的蛆，你努力蜕壳长上了一双翅膀，可就算别人把你当作鸟类，可你自己却清楚地知道你变成的也只不过是一只苍蝇。当你鼓足勇气想要飞向你爱慕的花朵时，当看到蝴蝶飞来，你总会及时停下望而却步，毕竟在别人眼中，鲜花和蝴蝶才是该有的般配。</p>
-</blockquote>
-<p>这句话很粗，但是我被深深触动了，我来自农村，我也能脑补出那种场景，一瞬间我感觉我就是解说里所说的那只蛆，我在努力地爬出那个坑。下一秒我又努力摇头让自己拒绝这种想法。我或许是苍蝇又或许不是，但是这重要吗？</p>
-<p>我为什么要在意别人的看法呢，我自己有我自己的坚持，有我的尊严去守护。我会去努力爬出这个坑。或许鲜花和蝴蝶才算般配，但是换个角度来说，鲜花会选择蝴蝶是出于选择更好的，那它又真的能够配得上那只不起眼的苍蝇呢？</p>
-<p>这几个月我一直熬夜，或许夜深比较安静，世界仿佛都属于我，又或许深夜我又可以停下来胡思乱想了。傅妈说，贫穷是有后遗症的。我想或许吧，除了有些自卑至少我现在没有体会到什么是所谓的后遗症，我也相信学的东西多了，见识广了，一切都会好，一切的烦恼源自自己的无知</p>
+<h2 id="三、关系模型"><a href="#三、关系模型" class="headerlink" title="三、关系模型"></a>三、关系模型</h2><pre><code>关系数据库是建立在关系模型上，而关系模型本质上就是若干个存储数据的二维表，可以把它们看作很多Excel表。</code></pre><p>表的每一行称为<strong>记录</strong>（Record），记录是一个逻辑意义上的数据。</p>
+<p>表的每一列称为<strong>字段</strong>（Column），同一个表的每一行记录都拥有相同的若干字段。</p>
+<p>字段定义了数据类型（整型、浮点型、字符串、日期等），以及是否允许为NULL。注意NULL表示字段数据不存在。<strong>一个整型字段如果为NULL不表示它的值为0，同样的，一个字符串型字段为NULL也不表示它的值为空串’’。</strong></p>
+<pre><code>通常情况下，字段应该避免允许为NULL。不允许为NULL可以简化查询条件，加快查询速度，也利于应用程序读取数据后无需判断是否为NULL。</code></pre><p>和Excel表有所不同的是，关系数据库的表和表之间需要建立<strong>“一对多”，“多对一”和“一对一”</strong>的关系，这样才能够按照应用程序的逻辑来组织和存储数据。</p>
+<p>例如，一个班级表：</p>
+<pre><code>ID         名称              班主任
+201        二年级一班          王老师
+202        二年级二班        李老师</code></pre><p>每一行对应着一个班级，而一个班级对应着多个学生，所以<strong>班级表和学生表的关系就是“一对多”</strong>：</p>
+<pre><code>ID    姓名    班级ID    性别    年龄
+1    小明    201      M       9
+2    小红    202         F       8
+3    小军    202         M       8
+4    小白    201     F       9</code></pre><p>反过来，如果我们先在学生表中定位了一行记录，例如ID=1的小明，要确定他的班级，只需要根据他的“班级ID”对应的值201找到班级表中ID=201的记录，即二年级一班。所以，<strong>学生表和班级表是“多对一”的关系。</strong></p>
+<p>如果我们把班级表分拆得细一点，例如，单独创建一个教师表：</p>
+<pre><code>ID        名称        年龄
+A1        王老师        26
+A2        张老师        39
+A3        李老师      32
+A4        赵老师      27</code></pre><p>班级表只存储教师ID：</p>
+<pre><code>ID        名称            班主任ID
+201        二年级一班         A1
+202     二年级二班        A3</code></pre><p>这样，一个班级总是对应一个教师，<strong>班级表和教师表就是“一对一”关系</strong>。</p>
+<p><strong>在关系数据库中，关系是通过主键和外键来维护的。</strong>我们在后面会分别深入讲解。</p>
 <hr>
-<h3 id="03-生活有感（胡说八道）"><a href="#03-生活有感（胡说八道）" class="headerlink" title="03 生活有感（胡说八道）"></a>03 生活有感（胡说八道）</h3><p>不知道为什么，自己的消费观和从前有了很大变化，买一个东西更考虑它能带来的用户体验以及能够提高生产力吗。<br>开网盘会员可以提高生产力，节约时间，存放资料等用户，也算作一种投资。<br>网易云音乐可以让我听到我想听的歌，改善我的心情，这些只需要一些小小的金钱投入就能带来回报，为什么不呢？ 为什么我以前就没有这样想呢？</p>
-<p>可能以前消费观太局限性了，现在更考虑投资和产出的比例，可能自己更物质了吧，我也不知道自己究竟是变好或者变坏了，只是觉得这样的观念应该比以前的观念要好，仅此而已。</p>
+<h3 id="3-1-1-主键"><a href="#3-1-1-主键" class="headerlink" title="3.1.1 主键"></a>3.1.1 主键</h3><p>对于关系表，有个很重要的约束，就是任意两条记录不能重复。不能重复不是指两条记录不完全相同，而是<strong>指能够通过某个字段唯一区分出不同的记录，这个字段被称为<em>主键</em>。</strong></p>
+<p>例如，students表的两行记录：</p>
+<pre><code>id    class_id    name    gender    score
+1    1            小明        M        90
+2    1            小红        F        95</code></pre><p>假设我们把name字段作为主键，那么通过名字小明或小红就能唯一确定一条记录。但是，这么设定，就没法存储同名的同学了，<strong>因为插入相同主键的两条记录是不被允许的</strong>。</p>
+<p>对主键的要求，最关键的一点是：<strong>记录一旦插入到表中，主键最好不要再修改</strong>，因为主键是用来唯一定位记录的，修改了主键，会造成一系列的影响。</p>
+<p>由于主键的作用十分重要，如何选取主键会对业务开发产生重要影响。如果我们以学生的身份证号作为主键，似乎能唯一定位记录。然而，身份证号也是一种业务场景，如果身份证号升位了，或者需要变更，作为主键，不得不修改的时候，就会对业务产生严重影响。</p>
+<p>所以，选取主键的一个基本原则是：<strong>不使用任何业务相关的字段作为主键。</strong></p>
+<p>因此，身份证号、手机号、邮箱地址这些看上去可以唯一的字段，均<strong>不可</strong>用作主键。</p>
+<p>作为主键最好是<strong>完全业务无关</strong>的字段，我们一般把这个字段命名为id。常见的可作为id字段的类型有：</p>
+<ol>
+<li><strong>自增整数类型</strong>：数据库会在插入数据时自动为每一条记录分配一个<strong>自增整数</strong>，这样我们就完全不用担心主键重复，也不用自己预先生成主键；</li>
+</ol>
+<p>2.<strong>全局唯一GUID类型</strong>：使用一种全局唯一的字符串作为主键，类似8f55d96b-8acc-4636-8cb8-76bf8abc2f57。GUID算法通过网卡MAC地址、时间戳和随机数保证任意计算机在任意时间生成的字符串都是不同的，大部分编程语言都内置了GUID算法，可以自己预算出主键。</p>
+<p>对于大部分应用来说，<strong>通常自增类型的主键就能满足需求</strong>。我们在students表中定义的主键也是BIGINT NOT NULL AUTO_INCREMENT类型。</p>
+<pre><code>如果使用INT自增类型，那么当一张表的记录数超过2147483647（约21亿）时，会达到上限而出错。使用BIGINT自增类型则可以最多约922亿亿条记录。</code></pre><h3 id="3-1-2-联合主键"><a href="#3-1-2-联合主键" class="headerlink" title="3.1.2 联合主键"></a>3.1.2 联合主键</h3><p> 关系数据库实际上还允许通过多个字段唯一标识记录，即两个或更多的字段都设置为主键，这种主键被称为联合主键。</p>
+<p> 对于联合主键，<strong>允许一列主键有重复</strong>，只要不是所有主键列都重复即可：</p>
+<pre><code> id_num              id_type            other columns...
+    1               A                       ...
+    2                A                        ...
+    2                B                       ...</code></pre><p>如果我们把上述表的<strong>id_num和id_type这两列作为联合主键</strong>，那么上面的3条记录都是允许的，因为没有两列主键组合起来是相同的。</p>
+<p>没有必要的情况下，我们尽量不使用联合主键，因为它给关系表带来了复杂度的上升。</p>
+<h3 id="3-1-3-小结"><a href="#3-1-3-小结" class="headerlink" title="3.1.3  小结"></a>3.1.3  小结</h3><p> 主键是关系表中记录的唯一标识。主键的选取非常重要：<strong>主键不要带有业务含义，而应该使用BIGINT自增或者GUID类型。主键也不应该允许NULL。</strong></p>
+<p>可以使用多个列作为联合主键，但联合主键并不常用。</p>
 <hr>
-<p>算了不早了，睡觉， 胡思乱想 作于 4月15日 凌晨2：31</p>
+<h3 id="3-2-1-外键"><a href="#3-2-1-外键" class="headerlink" title="3.2.1  外键"></a>3.2.1  外键</h3><p>当我们用主键唯一标识记录时，我们就可以在 <em>students</em> 表中确定任意一个学生的记录：</p>
+<pre><code>id    name    other columns...
+1    小明        ...
+2    小红        ...</code></pre><p>我们还可以在 <em>classes</em> 表中确定任意一个班级记录：</p>
+<pre><code>id    name    other columns...
+1    一班    ...
+2    二班    ...</code></pre><p>但是我们如何确定students表的一条记录，例如，id=1的小明，属于哪个班级呢？</p>
+<p>由于一个班级可以有多个学生，在关系模型中，这两个表的关系可以称为<strong>“一对多”</strong>，即一个classes的记录可以对应多个students表的记录。</p>
+<p>为了表达这种一对多的关系，我们需要在students表中加入一列class_id，让它的值与classes表的某条记录相对应：</p>
+<pre><code>id    class_id    name    other columns...
+1        1        小明        ...
+2        1       小红        ...
+5        2        小白        ...</code></pre><p>这样，我们就可以根据class_id这个列直接定位出一个students表的记录应该对应到classes的哪条记录。    </p>
+<p>在students表中，<strong>通过class_id的字段，可以把数据与另一张表关联起来</strong>，这种列称为<strong>外键</strong>。</p>
+<p>外键并不是通过列名实现的，而是<strong>通过定义外键约束实现</strong>的：</p>
+<pre><code>ALTER TABLE students
+ADD CONSTRAINT fk_class_id
+FOREIGN KEY (class_id)
+REFERENCES classes (id);</code></pre><p>其中，外键约束的名称fk_class_id可以任意，FOREIGN KEY (class_id)指定了class_id作为外键，REFERENCES classes (id)指定了这个外键将关联到classes表的id列（即classes表的主键）。</p>
+<p><strong>通过定义外键约束，关系数据库可以保证无法插入无效的数据</strong>。即如果classes表不存在id=99的记录，students表就无法插入class_id=99的记录。</p>
+<p><em>由于外键约束会降低数据库的性能，大部分互联网应用程序为了追求速度，并不设置外键约束，而是仅靠应用程序自身来保证逻辑的正确性</em>。这种情况下，class_id仅仅是一个普通的列，只是它起到了外键的作用而已。</p>
+<p>要删除一个外键约束，也是通过ALTER TABLE实现的：</p>
+<pre><code>ALTER TABLE students
+DROP FOREIGN KEY fk_class_id;</code></pre><p>注意：<strong>删除外键约束并没有删除外键这一列</strong>。删除列是通过DROP COLUMN …实现的。</p>
+<h3 id="3-2-2-多对多"><a href="#3-2-2-多对多" class="headerlink" title="3.2.2 多对多"></a>3.2.2 多对多</h3><p>通过一个表的外键关联到另一个表，我们可以定义出一对多关系。有些时候，还需要定义“多对多”关系。例如，一个老师可以对应多个班级，一个班级也可以对应多个老师，因此，<strong>班级表和老师表存在多对多关系。</strong></p>
+<p>多对多关系实际上是通过两个一对多关系实现的，即<strong>通过一个中间表，关联两个一对多关系，就形成了多对多关系：</strong></p>
+<p><strong>teachers表：</strong></p>
+<pre><code>id    name
+1    张老师
+2    王老师
+3    李老师
+4    赵老师</code></pre><p><strong>classes表：</strong></p>
+<pre><code>id    name
+1    一班
+2    二班</code></pre><p><strong>中间表teacher_class关联两个一对多关系：</strong></p>
+<pre><code>id    teacher_id    class_id
+1        1           1
+2       1           2
+3        2            1
+4        2            2
+5        3            1
+6        4            2</code></pre><p>通过中间表teacher_class可知teachers到classes的关系：</p>
+<ul>
+<li>id=1的张老师对应id=1,2的一班和二班；</li>
+<li>id=2的王老师对应id=1,2的一班和二班；</li>
+<li>id=3的李老师对应id=1的一班；</li>
+<li>id=4的赵老师对应id=2的二班。  </li>
+</ul>
+<p>同理可知classes到teachers的关系：</p>
+<ul>
+<li>id=1的一班对应id=1,2,3的张老师、王老师和李老师；</li>
+<li>id=2的二班对应id=1,2,4的张老师、王老师和赵老师；</li>
+</ul>
+<p>因此，通过中间表，我们就定义了一个“多对多”关系。</p>
+<h3 id="3-2-3-一对一"><a href="#3-2-3-一对一" class="headerlink" title="3.2.3 一对一"></a>3.2.3 一对一</h3><pre><code>一对一关系是指，一个表的记录对应到另一个表的唯一一个记录。</code></pre><p>例如，students表的每个学生可以有自己的联系方式，如果<em>把联系方式存入另一个表contacts</em>，我们就可以得到一个“一对一”关系：</p>
+<pre><code>id        student_id        mobile
+1           1          135xxxx6300
+2            2          138xxxx2209
+3            5          139xxxx8086</code></pre><p>既然是一对一关系，那为啥不给students表增加一个mobile列，这样就能合二为一了？??</p>
+<p>如果业务允许，完全可以把两个表合为一个表。但是，有些时候，如果某个学生没有手机号，那么，contacts表就不存在对应的记录。实际上，<strong>一对一关系准确地说，是contacts表一对一对应students表。</strong>    </p>
+<p>还<strong>有一些应用会把一个大表拆成两个一对一的表，目的是把经常读取和不经常读取的字段分开，以获得更高的性能。</strong>例如，把一个大的用户表分拆为用户基本信息表user_info和用户详细信息表user_profiles，大部分时候，只需要查询user_info表，并不需要查询user_profiles表，这样就提高了查询速度。</p>
+<h3 id="3-2-4-小结"><a href="#3-2-4-小结" class="headerlink" title="3.2.4 小结"></a>3.2.4 小结</h3><pre><code>关系数据库通过外键可以实现一对多、多对多和一对一的关系。外键既可以通过数据库来约束，也可以不设置约束，仅依靠应用程序的逻辑来保证。</code></pre><hr>
+<h3 id="3-3-1-索引"><a href="#3-3-1-索引" class="headerlink" title="3.3.1 索引"></a>3.3.1 索引</h3><pre><code>在关系数据库中，如果有上万甚至上亿条记录，在查找记录的时候，想要获得非常快的速度，就需要使用索引。</code></pre><p><strong>索引</strong>是<strong>关系数据库中对某一列或多个列的值进行<em>预排序</em>的数据结构</strong>。通过使用索引，可以让数据库系统不必扫描整个表，而是直接定位到符合条件的记录，这样就<em>大大加快了查询速度</em>。</p>
+<p>例如，对于students表：</p>
+<pre><code>id        class_id        name    gender        score
+1            1           小明        M            90
+2            1            小红        F           95
+3           1           小军        M            88</code></pre><p>如果要经常根据score列进行查询，就可以对score列创建索引：</p>
+<pre><code>ALTER TABLE students
+ADD INDEX idx_score (score);</code></pre><p>使用 ADD INDEX idx_score (score) 就创建了一个名称为 idx_score ，使用列 score 的索引。索引名称是任意的，索引如果有多列，可以在括号里依次写上，例如：</p>
+<pre><code>ALTER TABLE students
+ADD INDEX idx_name_score (name, score);</code></pre><p><strong>索引的效率取决于索引列的值是否散列</strong>，即该列的值如果越<strong>互不相同</strong>，那么索引效率越高。反过来，如果记录的列存在大量相同的值，例如gender列，大约一半的记录值是 M，另一半是 F，因此，对该列创建索引就没有意义。</p>
+<p>可以对一张表创建多个索引。索引的<strong>优</strong>点：提高了查询效率，<strong>缺点</strong>：在插入、更新和删除记录时，需要同时修改索引，因此，<strong>索引越多，插入、更新和删除记录的速度就越慢。</strong></p>
+<p><strong>对于主键，关系数据库会自动对其创建主键索引</strong>。使用主键索引的效率是最高的，因为主键会保证绝对唯一。</p>
+<h3 id="3-3-2-唯一索引"><a href="#3-3-2-唯一索引" class="headerlink" title="3.3.2 唯一索引"></a>3.3.2 唯一索引</h3><p>在设计关系数据表的时候，看上去唯一的列，例如身份证号、邮箱地址等，因为他们具有业务含义，因此不宜作为主键。</p>
+<p>但是，<strong>这些列根据业务要求，又具有唯一性约束</strong>：即不能出现两条记录存储了同一个身份证号。这个时候，就可以给该列添加一个唯一索引。例如，我们假设students表的name不能重复：<br>（即不宜作主键，宜作索引）</p>
+<pre><code>ALTER TABLE students
+ADD UNIQUE INDEX uni_name (name);</code></pre><p>通过<strong>UNIQUE关键字</strong>我们就添加了一个唯一索引。<br>也可以只对某一列添加一个唯一约束而不创建唯一索引</p>
+<pre><code>ALTER TABLE students
+ADD CONSTRAINT uni_name UNIQUE (name);</code></pre><p>这种情况下，name列没有索引，但仍然具有唯一性保证。</p>
+<p>无论是否创建索引，对于用户和应用程序来说，使用关系数据库不会有任何区别。这里的意思是说，当我们在数据库中查询时，如果有相应的索引可用，数据库系统就会自动使用索引来提高查询效率，如果没有索引，查询也能正常执行，只是速度会变慢。因此，索引可以在使用数据库的过程中逐步优化。</p>
+<h3 id="3-3-3-小结"><a href="#3-3-3-小结" class="headerlink" title="3.3.3 小结"></a>3.3.3 小结</h3><p>通过对数据库表创建索引，可以提高查询速度。</p>
+<p>通过创建唯一索引，可以保证某一列的值具有唯一性。</p>
+<p>数据库索引对于用户和应用程序来说都是<strong>透明的</strong>。</p>
+<hr>
 
             </div>
             <hr />
@@ -632,9 +847,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《杂记 0415》
+                    《数据库粗略回顾（一）》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/04/15/title-za-ji-0415/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/03/01/title-shu-ju-ku-cu-lue-hui-gu-yi/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Adward
             </a> 采用
@@ -675,7 +890,7 @@
         repo: 'EnforcerK.github.io',
         owner: 'EnforcerK',
         admin: "Adward_Wang",
-        id: '2020/04/15/title-za-ji-0415/',
+        id: '2020/03/01/title-shu-ju-ku-cu-lue-hui-gu-yi/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -962,59 +1177,6 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/24/network-protocols-architecture-1/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Network Protocols and Architecture (1)">
-                        
-                        <span class="card-title">Network Protocols and Architecture (1)</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            一、Week11. Establishing the Rules1.1 Reading: About This Course有几个这个课程提出的学习目标，等学完用来检测一下自己的学习情况。At the end of this course,
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-24
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/计算机网络/" class="post-category" target="_blank">
-                                    计算机网络
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/网络基础/" target="_blank">
-                        <span class="chip bg-color">网络基础</span>
-                    </a>
-                    
-                    <a href="/tags/Cisco/" target="_blank">
-                        <span class="chip bg-color">Cisco</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
                 <a href="/2020/03/03/title-shu-ju-ku-cu-lue-hui-gu-san/">
                     <div class="card-image">
                         
@@ -1034,9 +1196,9 @@ INSERT
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-03-03
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-03-03
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -1058,6 +1220,59 @@ INSERT
                     
                     <a href="/tags/SQL/" target="_blank">
                         <span class="chip bg-color">SQL</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/02/16/sort-algorithms/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="十大经典排序算法整理汇总（附代码）">
+                        
+                        <span class="card-title">十大经典排序算法整理汇总（附代码）</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            本文整理并总结了十大经典的排序算法（冒泡排序、选择排序、插入排序、快速排序、归并排序、希尔排序、计数排序、基数排序、桶排序、堆排序）的时间复杂度、空间复杂度等性质。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-16
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/编程算法/" class="post-category" target="_blank">
+                                    编程算法
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/leetcode/" target="_blank">
+                        <span class="chip bg-color">leetcode</span>
+                    </a>
+                    
+                    <a href="/tags/算法/" target="_blank">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
                 </div>

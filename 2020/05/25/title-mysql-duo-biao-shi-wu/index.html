@@ -4,15 +4,17 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="杂记 0415, 被捕の瓜子Blog">
+    <meta name="keywords" content="MySQL多表 &amp;事务, 被捕の瓜子Blog">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="貌似很久没更博客了，这些天一直忙着毕业论文的事，虽然现在还没弄好，但我觉得快了（又是我觉得，手动狗头）
-
-01 读书有感昨天在看一本书时，上面写到了这么一段话：
-
-对于计算机开发来说，懂得底层原理，这是技术能力；懂得算法参数，这是方法论。这">
+    <meta name="description" content="标签（空格分隔）： MySQL
+今日内容1. 多表查询
+2. 事务
+3. DCL多表查询一、内连接查询    1.隐式内连接：使用where条件 消除无用
+    SELECT 
+        t1.name, -- 员工表姓名
+    ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +22,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>杂记 0415 | 被捕の瓜子Blog</title>
+    <title>MySQL多表 &amp;事务 | 被捕の瓜子Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -270,13 +272,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        杂记 0415
+                        MySQL多表 &amp;事务
                     </div>
                 </div>
             </div>
@@ -386,28 +388,11 @@
                 <div class="col s7">
                     
                     <div class="article-tag">
-                        
-                        <a href="/tags/闲人闲语/" target="_blank">
-                            <span class="chip bg-color">闲人闲语</span>
-                        </a>
-                        
-                        <a href="/tags/杂记/" target="_blank">
-                            <span class="chip bg-color">杂记</span>
-                        </a>
-                        
+                        <span class="chip bg-color">无标签</span>
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fa fa-bookmark fa-fw icon-category"></i>
-                        
-                        <a href="/categories/浮生日记/" class="post-category" target="_blank">
-                            浮生日记
-                        </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -415,7 +400,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-15
+                    2020-05-25
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -429,14 +414,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    1.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    5 分
                 </div>
                 
                 
@@ -452,29 +437,128 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>貌似很久没更博客了，这些天一直忙着毕业论文的事，虽然现在还没弄好，但我觉得快了（又是我觉得，手动狗头）</p>
-<hr>
-<h3 id="01-读书有感"><a href="#01-读书有感" class="headerlink" title="01 读书有感"></a>01 读书有感</h3><p>昨天在看一本书时，上面写到了这么一段话：</p>
-<blockquote>
-<p>对于计算机开发来说，懂得底层原理，这是技术能力；懂得算法参数，这是方法论。这两者都不是工程能力。而工程能力是把一堆杂乱的数据整理成结构化数据，并运用算法对数据进行加工，得到某些结论。</p>
-</blockquote>
-<p>我被这句话触动了许久，因为我觉得一直以来自己的学习陷入了怪区，零散化没有体系，又或是学习没有目的性，始终抱着学生思维：<code>即做一件事我要从他的相关基础开始学习，等学好了我再去做</code>，其实知识永远学不完的，理论知识只有在实践中才能出真知。 做一件个项目，做一件事，你得清楚地知道你需要哪些知识，哪些知识是重要的，哪些是次要的，做成一个项目你需要做哪些相关的准备工作下一步怎么做等等，这些都需要去考虑，千万不能想着学个透彻，当然，不是说学深入不好，而是有时候面临时间、人力问题，等你准备好了黄花菜都凉了，我觉得那应该叫自我感动，其实是很低效的准备。</p>
-<p><strong>做一件事或者项目应该动手动脑子想想思路</strong>，没有思路可以去网上借鉴别人，再不行找前辈大佬去文，我觉得信息时代带给我最大的便利就是 很多问题我都可以在网上找到答案或者找到人去寻求帮助。</p>
-<p>再之就是，我想了许久，本科学习究竟给我带来了什么？我觉得就是素养、理论基础以及对计算机的热爱，工程能力学校并没有教或者说我学的不够好。所以我现在还是需要去不断提高自己的实践能力，光谈理论都是花架子。企业需要的是可以解决问题有工程能力的人才，而不是会考试或者说谈理论的人。对，我应该早点想清楚这一点的，可是身边也没有人指点我，或许人在某个阶段总会迷茫困惑吧。</p>
-<hr>
-<h3 id="02-观影有感"><a href="#02-观影有感" class="headerlink" title="02 观影有感"></a>02 观影有感</h3><p>前几天，看了一部电影解说，里面有一句话让我印象很深，我就把记了下来。</p>
-<blockquote>
-<p>就好像你是一只拼尽全力从粪坑里爬出来的蛆，你努力蜕壳长上了一双翅膀，可就算别人把你当作鸟类，可你自己却清楚地知道你变成的也只不过是一只苍蝇。当你鼓足勇气想要飞向你爱慕的花朵时，当看到蝴蝶飞来，你总会及时停下望而却步，毕竟在别人眼中，鲜花和蝴蝶才是该有的般配。</p>
-</blockquote>
-<p>这句话很粗，但是我被深深触动了，我来自农村，我也能脑补出那种场景，一瞬间我感觉我就是解说里所说的那只蛆，我在努力地爬出那个坑。下一秒我又努力摇头让自己拒绝这种想法。我或许是苍蝇又或许不是，但是这重要吗？</p>
-<p>我为什么要在意别人的看法呢，我自己有我自己的坚持，有我的尊严去守护。我会去努力爬出这个坑。或许鲜花和蝴蝶才算般配，但是换个角度来说，鲜花会选择蝴蝶是出于选择更好的，那它又真的能够配得上那只不起眼的苍蝇呢？</p>
-<p>这几个月我一直熬夜，或许夜深比较安静，世界仿佛都属于我，又或许深夜我又可以停下来胡思乱想了。傅妈说，贫穷是有后遗症的。我想或许吧，除了有些自卑至少我现在没有体会到什么是所谓的后遗症，我也相信学的东西多了，见识广了，一切都会好，一切的烦恼源自自己的无知</p>
-<hr>
-<h3 id="03-生活有感（胡说八道）"><a href="#03-生活有感（胡说八道）" class="headerlink" title="03 生活有感（胡说八道）"></a>03 生活有感（胡说八道）</h3><p>不知道为什么，自己的消费观和从前有了很大变化，买一个东西更考虑它能带来的用户体验以及能够提高生产力吗。<br>开网盘会员可以提高生产力，节约时间，存放资料等用户，也算作一种投资。<br>网易云音乐可以让我听到我想听的歌，改善我的心情，这些只需要一些小小的金钱投入就能带来回报，为什么不呢？ 为什么我以前就没有这样想呢？</p>
-<p>可能以前消费观太局限性了，现在更考虑投资和产出的比例，可能自己更物质了吧，我也不知道自己究竟是变好或者变坏了，只是觉得这样的观念应该比以前的观念要好，仅此而已。</p>
-<hr>
-<p>算了不早了，睡觉， 胡思乱想 作于 4月15日 凌晨2：31</p>
+                <p>标签（空格分隔）： MySQL</p>
+<h1 id="今日内容"><a href="#今日内容" class="headerlink" title="今日内容"></a>今日内容</h1><pre><code>1. 多表查询
+2. 事务
+3. DCL</code></pre><h2 id="多表查询"><a href="#多表查询" class="headerlink" title="多表查询"></a>多表查询</h2><h3 id="一、内连接查询"><a href="#一、内连接查询" class="headerlink" title="一、内连接查询"></a>一、内连接查询</h3><pre><code>    1.隐式内连接：使用where条件 消除无用
+    SELECT 
+        t1.name, -- 员工表姓名
+        t1.gender, --员工表性别
+        t2.name, --部门表名称
+    FROM
+        emp t1,
+        dept t2,
+    WHERE
+        t1.dep_id = t2.id;
 
+    2. 显示内连接
+        语法：select 字段列表 from 表名1 （inner） join 表名2 on 条件；
+        eg:   select *from emp (inner) join dept on emp.dept_id = dept.id;
+
+    3. 内连接查询
+        a. 从哪些表中获取数据
+        b. 查询条件是什么
+        c. 查询哪些字段</code></pre><h3 id="二、外连接查询："><a href="#二、外连接查询：" class="headerlink" title="二、外连接查询："></a>二、外连接查询：</h3><pre><code>1.左外连接
+    语法：select 字段列表 from 表1 left [outer] join 表2 on 条件;
+    ** 查询的是左表所有数据以及其交集部分
+2.右外连接
+    语法：select 字段列表 from 表1 right [outer] join 表2 on 条件;
+    ** 查询的是右表所有数据以及其交集部分    </code></pre><h3 id="三、子查询"><a href="#三、子查询" class="headerlink" title="三、子查询"></a>三、子查询</h3><pre><code>** 概念：查询中嵌套查询，称嵌套查询为子查询
+--  查询工资最高的员工信息
+-- 1. 查询最高工资为多少  9000
+    SELECT MAX(salary) FROM emp;
+
+-- 2.查询员工信息，并且工资等于9000的
+    SELECT * FROM emp WHERE emp.salary = 9000;
+
+-- 一条SQL 完成上述操作. 子查询
+    SELECT * FROM emp WHERE emp.salary =(SELECT MAX(salary) FROM emp);
+
+
+** 子查询的不同情况
+    1. 子查询的结果是单行单列的；
+        * 子查询的结果可以作为条件，使用运算符去判断。运算符: &gt; &gt;= &lt; &lt;= =               
+        SELECT *FROM emp WHERE emp.salary &lt; (SELECT AVG(salary) FROM emp);
+
+    2. 子查询的结果是多行单列的；
+        * 子查询作为条件，使用运算符in 来判断
+        -- 查询‘财务部’和‘市场部’所有的员工信息
+        SELECT id FROM dept WHERE NAME =&#39;财务部&#39; OR NAME =&#39;市场部&#39;;
+        SELECT * FROM emp WHERE dep_id =3 OR dep_id =2;
+        --子查询
+        SELECT * FROM emp WHERE dep_id IN(SELECT id FROM dept WHERE NAME =&#39;财务部&#39; OR NAME =&#39;市场部&#39;);
+
+    3. 子查询的结是多行多列的 
+        * 子查询可作为一张虚拟表
+        -- 查询员工入职日期是2011-11-11号之后的员工信息和部门信息
+        SELECT *FROM dept t1, (SELECT * FROM emp WHERE emp.join_date &gt;&#39;2011-11-11&#39;) t2
+        WHERE t1.id =t2.dep_id;</code></pre><h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><h3 id="一、事务的基本介绍"><a href="#一、事务的基本介绍" class="headerlink" title="一、事务的基本介绍"></a>一、事务的基本介绍</h3><pre><code>1.概念 ：  
+在实际的开发过程中，一个业务操作如：转账，往往是要多次访问数据库才能完成的。转账是一个用户扣钱，另一个用户加钱。如果其中有一条SQL语句出现异常，这条SQL就可能执行失败。 事务执行是一个整体，所有的SQL语句都必须执行成功。如果其中有1条SQL语句出现异常，则所有的SQL语句都要回滚，整个业务执行失败。 
+2.具体操作
+    1. 开启事务： start transaction;
+    2. 回滚：   roll back;
+    3. 提交：   commit;
+    4. MySQL 中事务默认自动提交
+
+    * 事务提交的两种方式
+        * 自动提交：
+            * MySQL就是自动提交
+        * 手动提交
+            * Oracle 默认手动提交事务
+            * 需要开启事务，再提交
+    * 修改事务的默认提交方式：
+        * 查看事务的。。。：SELECT @@autocommit; -- 1代表自动提交 0 代表手动提交
+        * 修改用SET 关键字：SET ... = 1(0);</code></pre><h3 id="二、事务的四大特征-ACID"><a href="#二、事务的四大特征-ACID" class="headerlink" title="二、事务的四大特征(ACID)"></a>二、事务的四大特征(ACID)</h3><pre><code>1.原子性（atomicy)： 是不可分割的最小操作单位
+2.持久性 (durability)： 当事务提交或回滚后，数据库会持久化地保存数据
+3.隔离性((isolation)：多个事务之间，相互独立。
+4.一致性(consistency)：事务操作前后，数据总量不变</code></pre><h3 id="三、事务的隔离级别（了解）"><a href="#三、事务的隔离级别（了解）" class="headerlink" title="三、事务的隔离级别（了解）"></a>三、事务的隔离级别（了解）</h3><pre><code>*概念：多个事务间隔离，相互独立，但是如果多个事务操作同一批数据，则会引发一些问题，设置不同的隔离级别就可以解决这些问题。
+*存在问题：
+    1. 脏读 ：一个事务，读取到另一个事务中没有提交的数据
+    2.不可重复度（虚读）：在同一个事务中，两次读到的数据不一样
+    3.幻读： 一个事务操作（DML）数据表中所有记录，另一个事务添加了一条数据，则第一个事务查不到自己的修改。
+*隔离级别：
+    1. read uncommitted: 读未提交
+        * 产生的问题： 脏读、不可重复度、幻读
+    2. read committed: 读已提交     （Oracle 默认)
+        * 产生的问题：不可重复读，幻读
+    3. repeatable read: 可重复读 （MySQL 默认)
+        * 产生的问题： 幻读
+    4. serializable: 串行化
+        * 可以解决所有问题
+
+    *注意：隔离级别从小到大安全性越来越高，但是效率越来越低。</code></pre><h2 id="DCL："><a href="#DCL：" class="headerlink" title="DCL："></a>DCL：</h2><pre><code>* SQL 分类
+    1.   DDL: 操作数据库和表
+    2.   DML： 增删改表中数据
+    3.   DQL： 查询表中数据
+    4.   DCL： 管理用户，授权
+* DBA： 数据库管理员
+
+* DCL： 管理用户，授权
+    1.管理用户
+        * 添加用户
+            * 语法： CREATE USER &#39;用户名&#39;@&#39;主机名&#39; IDENTIFIED BY &#39;密码&#39;;
+        * 删除用户
+            * 语法： DROP USER &#39;用户名&#39;@&#39;主机名&#39;;
+        * 修改用户密码
+            * 语法： UPDATE USER SET PASSWORD = PASSWORD（&#39;新密码&#39;) WHERE USER = &#39;用户名&#39;;//
+            SET PASSWORD FOR &#39;用户名’@&#39;主机名&#39;= PASSWORD(&#39;新密码&#39;);
+        * 查询用户
+            --1.切换到mysql数据库
+            USE mysql;
+            --2.查询user表
+            SELECT *FROM USER；
+            通配符：%表示可以在任意主机上登录
+
+    2.权限管理：
+        1.查询权限：
+            -- SHOW GRANTS FOR &#39;用户名&#39;@&#39;主机名&#39;;
+        2.授予权限：
+            -- GRANT 权限列表 ON 数据库名.表名 TO &#39;用户名&#39;@&#39;主机名&#39;;
+            -- 给与所以权限，在任意数据库任意表上
+             GRANT ALL ON *.* TO &#39;用户名&#39;@&#39;localhost&#39;;
+
+        3.撤销权限：
+            -- REVOKE 权限列表 ON 数据库名.表名 FROM &#39;用户名&#39;@&#39;主机名&#39;;</code></pre>
             </div>
             <hr />
 
@@ -632,9 +716,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《杂记 0415》
+                    《MySQL多表 &amp;事务》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/04/15/title-za-ji-0415/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/05/25/title-mysql-duo-biao-shi-wu/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Adward
             </a> 采用
@@ -675,7 +759,7 @@
         repo: 'EnforcerK.github.io',
         owner: 'EnforcerK',
         admin: "Adward_Wang",
-        id: '2020/04/15/title-za-ji-0415/',
+        id: '2020/05/25/title-mysql-duo-biao-shi-wu/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -962,6 +1046,48 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
+                <a href="/2020/05/25/title-mysql-xue-xi-dql-yue-shu-fan-shi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="MySQL 学习： DQL、约束、范式">
+                        
+                        <span class="card-title">MySQL 学习： DQL、约束、范式</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            标签（空格分隔）： DQL 约束 范式 
+内容    一、 DQL 查询语句
+        1.排序查询
+        2.聚合函数
+        3.分组查询
+        4.分页查询
+    二、约束
+    三、多表间关系
+
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-25
+                        </span>
+                        <span class="publish-author">
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
                 <a href="/2020/05/24/network-protocols-architecture-1/">
                     <div class="card-image">
                         
@@ -978,9 +1104,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-24
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-24
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -1002,62 +1128,6 @@
                     
                     <a href="/tags/Cisco/" target="_blank">
                         <span class="chip bg-color">Cisco</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/03/03/title-shu-ju-ku-cu-lue-hui-gu-san/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/26.jpg" class="responsive-img" alt="数据库粗略回顾（三）">
-                        
-                        <span class="card-title">数据库粗略回顾（三）</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            五、修改数据关系数据库的基本操作就是增删改查，即CRUD：Create、Retrieve、Update、Delete。其中，对于查询，我们已经详细讲述了SELECT语句的详细用法。
-而对于增、删、改，对应的SQL语句分别是：
-
-INSERT
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-03-03
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/数据库/" class="post-category" target="_blank">
-                                    数据库
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/MySQL/" target="_blank">
-                        <span class="chip bg-color">MySQL</span>
-                    </a>
-                    
-                    <a href="/tags/SQL/" target="_blank">
-                        <span class="chip bg-color">SQL</span>
                     </a>
                     
                 </div>
@@ -1203,25 +1273,6 @@ INSERT
     
 
 </main>
-
-
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
-    });
-</script>
-
-<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
-<!-- 代码语言 -->
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
-<!-- 代码块复制 -->
-<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
-<script type="text/javascript" src="/libs/codeBlock/clipboard.min.js"></script>
-<!-- 代码块收缩 -->
-<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script> 
-<!-- 代码块折行 -->
-<style type="text/css">code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }</style>
 
 
     <footer class="page-footer bg-color">

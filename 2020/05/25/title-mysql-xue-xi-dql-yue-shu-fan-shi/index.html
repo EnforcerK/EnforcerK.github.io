@@ -4,15 +4,19 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="杂记 0415, 被捕の瓜子Blog">
+    <meta name="keywords" content="MySQL 学习： DQL、约束、范式, 被捕の瓜子Blog">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="貌似很久没更博客了，这些天一直忙着毕业论文的事，虽然现在还没弄好，但我觉得快了（又是我觉得，手动狗头）
-
-01 读书有感昨天在看一本书时，上面写到了这么一段话：
-
-对于计算机开发来说，懂得底层原理，这是技术能力；懂得算法参数，这是方法论。这">
+    <meta name="description" content="标签（空格分隔）： DQL 约束 范式 
+内容    一、 DQL 查询语句
+        1.排序查询
+        2.聚合函数
+        3.分组查询
+        4.分页查询
+    二、约束
+    三、多表间关系
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +24,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>杂记 0415 | 被捕の瓜子Blog</title>
+    <title>MySQL 学习： DQL、约束、范式 | 被捕の瓜子Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -270,13 +274,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        杂记 0415
+                        MySQL 学习： DQL、约束、范式
                     </div>
                 </div>
             </div>
@@ -386,28 +390,11 @@
                 <div class="col s7">
                     
                     <div class="article-tag">
-                        
-                        <a href="/tags/闲人闲语/" target="_blank">
-                            <span class="chip bg-color">闲人闲语</span>
-                        </a>
-                        
-                        <a href="/tags/杂记/" target="_blank">
-                            <span class="chip bg-color">杂记</span>
-                        </a>
-                        
+                        <span class="chip bg-color">无标签</span>
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fa fa-bookmark fa-fw icon-category"></i>
-                        
-                        <a href="/categories/浮生日记/" class="post-category" target="_blank">
-                            浮生日记
-                        </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -415,7 +402,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-15
+                    2020-05-25
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -429,14 +416,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    2.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    8 分
                 </div>
                 
                 
@@ -452,28 +439,189 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>貌似很久没更博客了，这些天一直忙着毕业论文的事，虽然现在还没弄好，但我觉得快了（又是我觉得，手动狗头）</p>
+                <p>标签（空格分隔）： DQL 约束 范式 </p>
+<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><pre><code>    一、 DQL 查询语句
+        1.排序查询
+        2.聚合函数
+        3.分组查询
+        4.分页查询
+    二、约束
+    三、多表间关系
+    四、范式
+    五、数据库备份与还原</code></pre><hr>
+<h2 id="DQL-查询语句"><a href="#DQL-查询语句" class="headerlink" title="DQL 查询语句"></a>DQL 查询语句</h2><h3 id="排序查询"><a href="#排序查询" class="headerlink" title="排序查询"></a>排序查询</h3><p> <strong>语法</strong>：<code>ORDER BY 子句</code><br> <strong>eg:</strong> </p>
+<pre><code>ORDER BY 排序字段1 排序方式1， 排序字段2 排序方式2 ....</code></pre><p><strong>排序方式：</strong>   </p>
+<pre><code>ASC 升序 默认方式
+DESC 降序 </code></pre><p> <strong>注意：</strong>  如果有多个排序条件，则当前面的条件值相同时才考虑后面的排序条件      </p>
+<h3 id="聚合函数"><a href="#聚合函数" class="headerlink" title="聚合函数"></a>聚合函数</h3><pre><code>    将一列数据作为一个整体，进行纵向计算</code></pre><ol>
+<li>count</li>
+<li>max, min</li>
+<li>sum, avg</li>
+</ol>
+<p><strong>注</strong>：聚合函数的计算排除了 NULL值， </p>
+<p><strong>解决方案：</strong><br>1.一般选择非空的列:主键<br>2.IFNULL</p>
+<p>eg:</p>
+<pre><code>SELECT COUNT(english)) FROM student;//排除NULL
+SELECT COUNT(IFNULL(english, 0)) FROM student; //有NULL作0</code></pre><h3 id="分组查询"><a href="#分组查询" class="headerlink" title="分组查询"></a>分组查询</h3><p> <strong>语法</strong>：<code>GROUP BY 子句</code><br> <strong>注意!：</strong><br> 1.分组之后查询的字段： 分组字段、聚合函数</p>
+<ol start="2">
+<li><p>where 和 having 的区别</p>
+<p>a. where 在分组前进行限定，若不满足条件，则不参与分组。having 在分组之后进行线性，若不满足条件，则不会被查询出来。<br>b. where 后不可以跟聚合函数， having 可以进行聚合函数的判断</p>
+</li>
+</ol>
+<p> eg:</p>
+<pre><code>-- 按照性别分组，分别查询男女同学平均分
+SELECT  sex, AVG(math) 
+FROM student GROUP BY sex;
+
+-- 按照性别分组，分别查询男女同学平均分，人数
+SELECT sex, AVG(math), COUNT(id) 
+FROM student GROUP BY sex;
+
+-- 按照性别分组，分别查询男女同学平均分，人数 要求：分数低于70分的人，不参与分组（分组前添加限定条件）
+SELECT sex, AVG(math), COUNT(id) 
+FROM student
+WHERE math&gt; 70 GROUP BY sex;
+
+-- 按照性别分组，分别查询男女同学平均分，人数 要求：分数低于70分的人，不参与分组，分组之后，人数要大于两个人(分组之后限定条件）
+SELECT sex, AVG(math), COUNT(id) number
+FROM student
+WHERE math&gt;70
+GROUP BY SEX
+HAVING number &gt;2; //起别名判断更方便</code></pre><h3 id="分页查询"><a href="#分页查询" class="headerlink" title="分页查询"></a>分页查询</h3><p><strong>语法</strong>：<code>limit 开始的索引， 每页查询的条数;</code><br><strong>公式</strong>： <code>开始的索引 = （当前页码 - 1） *
+每页显示的条数</code><br>limit 是一个“方言”，不同数据库对应函数不同。<br>eg:</p>
+<pre><code>-- 每页显示三条记录
+SELECT *FROM student LIMIT 0,3;    --第一页
+SELECT *FROM student LIMIT 3,3;    --第二页
+SELECT *FROM student LIMIT 6,3;    --第二页</code></pre><hr>
+<h2 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h2><p><strong>概念：</strong>对表中数据进行限定，保证数据的正确性、有效性、完整性<br><strong>分类：</strong><br>1.主键约束： primary key<br>2.非空约束:  not null<br>3.唯一约束:  unique<br>4.外键约束:  foreign key</p>
+<h3 id="非空约束-NOT-NULL"><a href="#非空约束-NOT-NULL" class="headerlink" title="非空约束 NOT NULL"></a>非空约束 NOT NULL</h3><pre><code>某一列值不能为NULL；</code></pre><p>1.创建表时添加约束</p>
+<pre><code>CRETE TABLE stu{
+    id INT,
+    name VARCHAR(20) NOT NULL  --name非空
+}；
+
+-- 删除 name的非空约束
+ALTER TABLE stu  MODIFY NAME VARCHAR(20);</code></pre><p>2 . 创建表后，添加约束</p>
+<pre><code>       ALTER TABLE stu  MODIFY NAME VARCHAR(20) NOT NULL；</code></pre><h3 id="唯一约束"><a href="#唯一约束" class="headerlink" title="唯一约束"></a>唯一约束</h3><pre><code>某一列值不能重复</code></pre><p><strong>注意</strong>：唯一约束可以NULL值，但只能有一条记录为NULL。<br>1.创建表时添加约束</p>
+<pre><code>CRETE TABLE stu{
+    id INT,
+    phone_number VARCHAR(20) UNIQUE  --name非空
+}；
+
+-- 删除唯一约束（错误方法 ×），和删除非空约束不太一样
+ALTER TABLE stu  MODIFY phone_number VARCHAR(20);
+-- 删除唯一约束的正确操作
+ALTER TABLE stu DROP INDEX phone_numher;</code></pre><p>2.创建表后添加约束</p>
+<pre><code>ALTER TABLE stu MODIFY phone_number VARCHAR(20) UNIQUE;</code></pre><h3 id="主键约束"><a href="#主键约束" class="headerlink" title="主键约束"></a>主键约束</h3><p>1、注意：</p>
+<pre><code>1.含义：非空且唯一 
+2.一张表只能有一个字段为主键
+3.主键是表中记录的唯一标识</code></pre><p>2、创建表时，添加主键约束</p>
+<pre><code>CREATE TABLE stu{
+    id INT  PRIMARY KEY, -- 给id 添加主键约束
+    name VARCHAR(20)
+};</code></pre><p>3、删除主键</p>
+<pre><code>-- 错误做法 alter table stu modify id int;
+--正确做法,因为只有一个主键，不必指明
+ALTER TABLE stu DROP PRIMARY KEY;</code></pre><p>4、创建表后，添加主键</p>
+<pre><code>ALTER TABLE stu MODIFY id INT PRIMARY KEY;</code></pre><p>5、自动增长(一般配合主键使用)</p>
+<pre><code>1.概念：如果某一列为数值类型，使用 auto_increment 可以用来完成值的自动增长
+2.在创建表时，添加主键约束，并且完成主键自增长(和上条记录相关）
+create table stu{
+    id int primary key auto_increment, -- 给id 添加主键约束
+    name varchar(20)
+};
+3. --删除自动增长
+    alter table stu modiy id int;
+         (并不会删除主键）
+4. --添加自动增长
+    alter table stu modiy id int auto_increment;</code></pre><h3 id="外键约束"><a href="#外键约束" class="headerlink" title="外键约束"></a>外键约束</h3><pre><code>让表间产生关系，保证数据的正确性</code></pre><ol>
+<li><p>创建表时，可以添加外键<br>语法：</p>
+<pre><code>create table 表名{
+    ...
+    外键列,
+    constraint 外键名称 foreign key ( 外键列名称) references 主表名称(主表主键名称)
+}；</code></pre><p>eg:</p>
+<pre><code>--部门表
+CREATE TBALE department{
+        id INT PRIMARY KEY AUTO_INCREMENT,
+        dep_name VARCHAR(20),
+        dep_lacation VARCHAR(20)
+};
+
+--创建员工表    多方、从表
+CREATE TBALE employee{
+        id INT PRIMARY KEY AUTO_INCREMENT,
+        name VARCHAR(20),
+        age INT,
+        dep_id INT，    -- 外键对应主表的主键
+        CONSTRAINT emp_dept_fk FOREIGN KEY(dep_id) REFERENCES department(id);
+};</code></pre></li>
+<li><p>删除外键</p>
+<pre><code> ALTER TABLE 表名 DROP FOREIGN KEY 外键名称;</code></pre></li>
+<li><p>添加外键</p>
+<pre><code>ALTER TABLE 表名
+ADD CONSTRAINT 外键名称 FOREIGN   KEY(外键字段名称) 
+REFERENCES 主表名称(主表列名称);</code></pre></li>
+</ol>
+<p>4.级联操作<br>    添加外键时设置级联更新<br>    1.语法：</p>
+<pre><code>        ALTER TABLE 表名
+        ADD CONSTRAINT 外键名称 FOREIGN   KEY(外键字段名称) 
+        REFERENCES 主表名称(主表列名称)
+        ON UPDATE CASCADE; --更新</code></pre><p>2.分类：<br>    a.级联更新: ON UPDATE CASCADE （谨慎使用级联)<br>    b.级联删除：ON DELETE CASCADE</p>
 <hr>
-<h3 id="01-读书有感"><a href="#01-读书有感" class="headerlink" title="01 读书有感"></a>01 读书有感</h3><p>昨天在看一本书时，上面写到了这么一段话：</p>
-<blockquote>
-<p>对于计算机开发来说，懂得底层原理，这是技术能力；懂得算法参数，这是方法论。这两者都不是工程能力。而工程能力是把一堆杂乱的数据整理成结构化数据，并运用算法对数据进行加工，得到某些结论。</p>
-</blockquote>
-<p>我被这句话触动了许久，因为我觉得一直以来自己的学习陷入了怪区，零散化没有体系，又或是学习没有目的性，始终抱着学生思维：<code>即做一件事我要从他的相关基础开始学习，等学好了我再去做</code>，其实知识永远学不完的，理论知识只有在实践中才能出真知。 做一件个项目，做一件事，你得清楚地知道你需要哪些知识，哪些知识是重要的，哪些是次要的，做成一个项目你需要做哪些相关的准备工作下一步怎么做等等，这些都需要去考虑，千万不能想着学个透彻，当然，不是说学深入不好，而是有时候面临时间、人力问题，等你准备好了黄花菜都凉了，我觉得那应该叫自我感动，其实是很低效的准备。</p>
-<p><strong>做一件事或者项目应该动手动脑子想想思路</strong>，没有思路可以去网上借鉴别人，再不行找前辈大佬去文，我觉得信息时代带给我最大的便利就是 很多问题我都可以在网上找到答案或者找到人去寻求帮助。</p>
-<p>再之就是，我想了许久，本科学习究竟给我带来了什么？我觉得就是素养、理论基础以及对计算机的热爱，工程能力学校并没有教或者说我学的不够好。所以我现在还是需要去不断提高自己的实践能力，光谈理论都是花架子。企业需要的是可以解决问题有工程能力的人才，而不是会考试或者说谈理论的人。对，我应该早点想清楚这一点的，可是身边也没有人指点我，或许人在某个阶段总会迷茫困惑吧。</p>
+<h2 id="数据库设计"><a href="#数据库设计" class="headerlink" title="数据库设计"></a>数据库设计</h2><h3 id="一-多表之间的关系"><a href="#一-多表之间的关系" class="headerlink" title="一.多表之间的关系"></a>一.多表之间的关系</h3><pre><code>   A.  分类
+        1.一对一
+        2.一对多（多对一）
+            *分析：部分和员工间
+        3.多对多
+            *分析：学生和课程选课关系
+
+   B.  实现    
+        1.一对多（多对一）
+            * 实现方式： 在多的一方（从表）建立外键，指向一（主表）的主键
+        2.多对多 （学生选课）
+
+            * 实现方式： 引入中间表
+             三种方式图解如下  </code></pre><p>一对一关系实现</p>
+<p><img src="http://static.zybuluo.com/Adward-Wang/8vd4dju9cw0au4di3y50ozx4/%E4%B8%80%E5%AF%B9%E4%B8%80%E5%85%B3%E7%B3%BB%E5%AE%9E%E7%8E%B0.bmp" alt="一对一关系实现.bmp-2398.6kB"> </p>
+<p>一对多关系实现            </p>
+<p><img src="http://static.zybuluo.com/Adward-Wang/0y7a3l32se7hnuevbnntdco5/%E4%B8%80%E5%AF%B9%E5%A4%9A%E5%85%B3%E7%B3%BB%E5%AE%9E%E7%8E%B0.bmp" alt="一对多关系实现.bmp-2398.6kB"></p>
+<p> 多对多关系实现</p>
+<p><img src="http://static.zybuluo.com/Adward-Wang/wdwicrsnmlqaod5kl4hqxqdj/%E5%A4%9A%E5%AF%B9%E5%A4%9A%E5%85%B3%E7%B3%BB%E5%AE%9E%E7%8E%B0.bmp" alt="多对多关系实现.bmp-2398.6kB"></p>
+<h3 id="二-数据库设计范式"><a href="#二-数据库设计范式" class="headerlink" title="二.数据库设计范式"></a>二.数据库设计范式</h3><p>1、第一范式（1NF）：数据库表的每一列都是不可分割的原子数据项<br>2、第二范式（2NF）<br>在1NF的基础上，非码属性必须完全依赖于候选码（在1NF基础上消除非主属性对主码的部分函数依赖）<br>3、第三范式（3NF）<br>在2NF基础上，任何非主属性不依赖于其它非主属性（在2NF基础上消除传递依赖）</p>
+<p><strong>对三大范式的通俗理解:</strong></p>
+<pre><code>1.第一范式：
+    原子性，不可分割
+2.第二范式：
+    消除部分依赖（通过表的拆分）
+3.第三范式：
+    消除传递依赖（还是通过表的拆分）
+
+*** 几个概念   
+     1.函数依赖： A--&gt;B ,如果通过A属性的值，可以确定唯一B属性的值，则称B依赖于A
+    例如： 学号 --&gt; 姓名  (学号，课程名称） --&gt;分数
+
+     2.完全函数依赖： A --&gt; B, 如果A 是一个属性组， 则B属性值的确定需要依赖于A属性组中所有属性的值。
+    例如 （学号， 课程名称） --&gt;  分数
+
+     3.部分函数依赖： A --&gt; B, 如果A是一个属性组，则B属性值的确定只需要依赖A属性组中的某一些值即可。
+    例如： （学号, 课程名称) --&gt; 姓名
+
+     4.传递函数依赖： A--&gt; B, B --&gt;C， 如果通过A属性（属性组）的值，可以确定唯一B属性的值，再通过B属性（属性组）的值可以确定唯一C属性的值，则称C传递函数依赖于 A.
+     例如： 学号 --&gt; 系名 --&gt; 系主任
+
+     5.码： 如果一张表中，一个属性或者属性组 被 其他所有属性所完全依赖，则称这个属性（属性值）为该笔的码。
+     例如：该表中为（学号，课程名称）
+            * 主属性： 码属性组中的所有属性
+            * 非主属性： 不是码中的属性</code></pre><h3 id="数据库的备份和还原"><a href="#数据库的备份和还原" class="headerlink" title="数据库的备份和还原"></a>数据库的备份和还原</h3><p>1.命令行：</p>
+<pre><code>备份语法： mysqldump -u用户名 -p密码 数据库名称 &gt;保存路径
+还原： 
+    1.登录数据库
+    2.创建数据库   create database ***
+    3.使用数据库   use ***
+    4.执行文件（ source  数据库路径）</code></pre><p>2.图形界面<br>    导出sql 文件<br>    用Navicat导入时，我发现不能直接导入数据，必须新建数据库，再在表里右键选择导入sql  文件。</p>
 <hr>
-<h3 id="02-观影有感"><a href="#02-观影有感" class="headerlink" title="02 观影有感"></a>02 观影有感</h3><p>前几天，看了一部电影解说，里面有一句话让我印象很深，我就把记了下来。</p>
-<blockquote>
-<p>就好像你是一只拼尽全力从粪坑里爬出来的蛆，你努力蜕壳长上了一双翅膀，可就算别人把你当作鸟类，可你自己却清楚地知道你变成的也只不过是一只苍蝇。当你鼓足勇气想要飞向你爱慕的花朵时，当看到蝴蝶飞来，你总会及时停下望而却步，毕竟在别人眼中，鲜花和蝴蝶才是该有的般配。</p>
-</blockquote>
-<p>这句话很粗，但是我被深深触动了，我来自农村，我也能脑补出那种场景，一瞬间我感觉我就是解说里所说的那只蛆，我在努力地爬出那个坑。下一秒我又努力摇头让自己拒绝这种想法。我或许是苍蝇又或许不是，但是这重要吗？</p>
-<p>我为什么要在意别人的看法呢，我自己有我自己的坚持，有我的尊严去守护。我会去努力爬出这个坑。或许鲜花和蝴蝶才算般配，但是换个角度来说，鲜花会选择蝴蝶是出于选择更好的，那它又真的能够配得上那只不起眼的苍蝇呢？</p>
-<p>这几个月我一直熬夜，或许夜深比较安静，世界仿佛都属于我，又或许深夜我又可以停下来胡思乱想了。傅妈说，贫穷是有后遗症的。我想或许吧，除了有些自卑至少我现在没有体会到什么是所谓的后遗症，我也相信学的东西多了，见识广了，一切都会好，一切的烦恼源自自己的无知</p>
-<hr>
-<h3 id="03-生活有感（胡说八道）"><a href="#03-生活有感（胡说八道）" class="headerlink" title="03 生活有感（胡说八道）"></a>03 生活有感（胡说八道）</h3><p>不知道为什么，自己的消费观和从前有了很大变化，买一个东西更考虑它能带来的用户体验以及能够提高生产力吗。<br>开网盘会员可以提高生产力，节约时间，存放资料等用户，也算作一种投资。<br>网易云音乐可以让我听到我想听的歌，改善我的心情，这些只需要一些小小的金钱投入就能带来回报，为什么不呢？ 为什么我以前就没有这样想呢？</p>
-<p>可能以前消费观太局限性了，现在更考虑投资和产出的比例，可能自己更物质了吧，我也不知道自己究竟是变好或者变坏了，只是觉得这样的观念应该比以前的观念要好，仅此而已。</p>
-<hr>
-<p>算了不早了，睡觉， 胡思乱想 作于 4月15日 凌晨2：31</p>
+<h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><p>这算是在MySQL 基础上进一步说了一些知识了，关于 范式的内容也明白清晰了不少，还是觉得sql语句应该多用才能孰能生巧，并且应用到实际开发过程中，不能纸上谈兵！！！</p>
 
             </div>
             <hr />
@@ -632,9 +780,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《杂记 0415》
+                    《MySQL 学习： DQL、约束、范式》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/04/15/title-za-ji-0415/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/05/25/title-mysql-xue-xi-dql-yue-shu-fan-shi/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Adward
             </a> 采用
@@ -675,7 +823,7 @@
         repo: 'EnforcerK.github.io',
         owner: 'EnforcerK',
         admin: "Adward_Wang",
-        id: '2020/04/15/title-za-ji-0415/',
+        id: '2020/05/25/title-mysql-xue-xi-dql-yue-shu-fan-shi/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -962,48 +1110,31 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/24/network-protocols-architecture-1/">
+                <a href="/2020/05/25/title-shu-ju-ku-cu-lue-hui-gu-er/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Network Protocols and Architecture (1)">
+                        <img src="/medias/featureimages/27.jpg" class="responsive-img" alt="数据库粗略回顾（二）">
                         
-                        <span class="card-title">Network Protocols and Architecture (1)</span>
+                        <span class="card-title">数据库粗略回顾（二）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一、Week11. Establishing the Rules1.1 Reading: About This Course有几个这个课程提出的学习目标，等学完用来检测一下自己的学习情况。At the end of this course,
+                            标签（空格分隔）： SQL  查询语句
+四、查询数据4.1 基本查询要查询数据库表的数据，我们使用如下的SQL语句：
+SELECT * FROM &lt;表名&gt;假设表名是students，要查询students表的所有行，我们用如下S
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-24
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-25
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/计算机网络/" class="post-category" target="_blank">
-                                    计算机网络
-                                </a>
-                            
-                            
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/网络基础/" target="_blank">
-                        <span class="chip bg-color">网络基础</span>
-                    </a>
-                    
-                    <a href="/tags/Cisco/" target="_blank">
-                        <span class="chip bg-color">Cisco</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -1015,51 +1146,35 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/03/03/title-shu-ju-ku-cu-lue-hui-gu-san/">
+                <a href="/2020/05/25/title-mysql-duo-biao-shi-wu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/26.jpg" class="responsive-img" alt="数据库粗略回顾（三）">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="MySQL多表 &事务">
                         
-                        <span class="card-title">数据库粗略回顾（三）</span>
+                        <span class="card-title">MySQL多表 &事务</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            五、修改数据关系数据库的基本操作就是增删改查，即CRUD：Create、Retrieve、Update、Delete。其中，对于查询，我们已经详细讲述了SELECT语句的详细用法。
-而对于增、删、改，对应的SQL语句分别是：
-
-INSERT
+                            标签（空格分隔）： MySQL
+今日内容1. 多表查询
+2. 事务
+3. DCL多表查询一、内连接查询    1.隐式内连接：使用where条件 消除无用
+    SELECT 
+        t1.name, -- 员工表姓名
+    
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-03-03
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-25
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/数据库/" class="post-category" target="_blank">
-                                    数据库
-                                </a>
-                            
-                            
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/MySQL/" target="_blank">
-                        <span class="chip bg-color">MySQL</span>
-                    </a>
-                    
-                    <a href="/tags/SQL/" target="_blank">
-                        <span class="chip bg-color">SQL</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -1203,25 +1318,6 @@ INSERT
     
 
 </main>
-
-
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
-    });
-</script>
-
-<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
-<!-- 代码语言 -->
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
-<!-- 代码块复制 -->
-<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
-<script type="text/javascript" src="/libs/codeBlock/clipboard.min.js"></script>
-<!-- 代码块收缩 -->
-<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script> 
-<!-- 代码块折行 -->
-<style type="text/css">code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }</style>
 
 
     <footer class="page-footer bg-color">
