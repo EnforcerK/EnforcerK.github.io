@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://enforcerk.xyz/"/>
-  <updated>2020-05-27T18:24:08.324Z</updated>
+  <updated>2020-05-31T15:58:01.922Z</updated>
   <id>https://enforcerk.xyz/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>Internet Connection —— How to Get Online?</title>
-    <link href="https://enforcerk.xyz/2020/05/28/internet-connection-how-to-get-online/"/>
-    <id>https://enforcerk.xyz/2020/05/28/internet-connection-how-to-get-online/</id>
-    <published>2020-05-27T17:11:23.000Z</published>
-    <updated>2020-05-27T18:24:08.324Z</updated>
+    <link href="https://enforcerk.xyz/2020/05/31/internet-connection-how-to-get-online/"/>
+    <id>https://enforcerk.xyz/2020/05/31/internet-connection-how-to-get-online/</id>
+    <published>2020-05-31T15:11:23.000Z</published>
+    <updated>2020-05-31T15:58:01.922Z</updated>
     
     <summary type="html">
     
@@ -136,7 +136,7 @@
     <link href="https://enforcerk.xyz/2020/03/24/title-mysql-duo-biao-shi-wu/"/>
     <id>https://enforcerk.xyz/2020/03/24/title-mysql-duo-biao-shi-wu/</id>
     <published>2020-03-24T10:00:00.000Z</published>
-    <updated>2020-05-25T07:48:06.269Z</updated>
+    <updated>2020-05-29T01:13:25.826Z</updated>
     
     <summary type="html">
     
@@ -156,6 +156,8 @@
     
     
       <category term="MySQL" scheme="https://enforcerk.xyz/tags/MySQL/"/>
+    
+      <category term="SQL" scheme="https://enforcerk.xyz/tags/SQL/"/>
     
   </entry>
   
