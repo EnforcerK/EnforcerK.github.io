@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://enforcerk.xyz/"/>
-  <updated>2020-05-31T15:58:01.922Z</updated>
+  <updated>2020-06-03T00:58:32.343Z</updated>
   <id>https://enforcerk.xyz/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Internet Connection —— How to Get Online?</title>
-    <link href="https://enforcerk.xyz/2020/05/31/internet-connection-how-to-get-online/"/>
-    <id>https://enforcerk.xyz/2020/05/31/internet-connection-how-to-get-online/</id>
-    <published>2020-05-31T15:11:23.000Z</published>
-    <updated>2020-05-31T15:58:01.922Z</updated>
+    <title>Network Protocols and Architecture (2)</title>
+    <link href="https://enforcerk.xyz/2020/06/03/network-protocols-and-architecture-2/"/>
+    <id>https://enforcerk.xyz/2020/06/03/network-protocols-and-architecture-2/</id>
+    <published>2020-06-03T01:00:23.000Z</published>
+    <updated>2020-06-03T00:58:32.343Z</updated>
     
     <summary type="html">
     
@@ -29,7 +29,8 @@
       
         
         
-          &lt;h2 id=&quot;1、Week1-Communicating-in-a-Connected-World&quot;&gt;&lt;a href=&quot;#1、Week1-Communicating-in-a-Connected-World&quot; class=&quot;headerlink&quot;
+          &lt;blockquote&gt;
+&lt;p&gt;In this module, you will learn how data frames are created and processed by hosts and switches will be explained. You will
         
       
     
@@ -45,11 +46,11 @@
   </entry>
   
   <entry>
-    <title>Network Protocols and Architecture (2)</title>
-    <link href="https://enforcerk.xyz/2020/05/26/network-protocols-architecture-2/"/>
-    <id>https://enforcerk.xyz/2020/05/26/network-protocols-architecture-2/</id>
-    <published>2020-05-25T17:57:23.000Z</published>
-    <updated>2020-05-25T17:57:12.841Z</updated>
+    <title>Internet Connection —— How to Get Online?</title>
+    <link href="https://enforcerk.xyz/2020/05/31/internet-connection-how-to-get-online/"/>
+    <id>https://enforcerk.xyz/2020/05/31/internet-connection-how-to-get-online/</id>
+    <published>2020-05-31T15:11:23.000Z</published>
+    <updated>2020-05-31T15:58:01.922Z</updated>
     
     <summary type="html">
     
@@ -57,8 +58,7 @@
       
         
         
-          &lt;blockquote&gt;
-&lt;p&gt;In this module, you will learn how data frames are created and processed by hosts and switches will be explained. You will
+          &lt;h2 id=&quot;1、Week1-Communicating-in-a-Connected-World&quot;&gt;&lt;a href=&quot;#1、Week1-Communicating-in-a-Connected-World&quot; class=&quot;headerlink&quot;
         
       
     
