@@ -4,13 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Internet Connection —— How to Get Online?, 被捕の瓜子Blog">
+    <meta name="keywords" content="Network Protocols and Architecture (3), 被捕の瓜子Blog">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="1、Week1:  Communicating in a Connected World1.1 Reading: About This Course挑重点记录！！！学习目标：
-
-At the end of this course, you ">
+    <meta name="description" content="PS： message 我翻译的是消息，应该是报文更好点。Week3、 Communicating on the Local Area Network1. Distributing Messages to Other Networks1.1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +16,7 @@ At the end of this course, you ">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Internet Connection —— How to Get Online? | 被捕の瓜子Blog</title>
+    <title>Network Protocols and Architecture (3) | 被捕の瓜子Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -268,13 +266,13 @@ At the end of this course, you ">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/26.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Internet Connection —— How to Get Online?
+                        Network Protocols and Architecture (3)
                     </div>
                 </div>
             </div>
@@ -413,7 +411,7 @@ At the end of this course, you ">
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-05-31
+                    2020-06-04
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -427,14 +425,14 @@ At the end of this course, you ">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.9k
+                    3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    18 分
+                    10 分
                 </div>
                 
                 
@@ -450,301 +448,146 @@ At the end of this course, you ">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1、Week1-Communicating-in-a-Connected-World"><a href="#1、Week1-Communicating-in-a-Connected-World" class="headerlink" title="1、Week1:  Communicating in a Connected World"></a>1、Week1:  Communicating in a Connected World</h2><h3 id="1-1-Reading-About-This-Course"><a href="#1-1-Reading-About-This-Course" class="headerlink" title="1.1 Reading: About This Course"></a>1.1 Reading: About This Course</h3><p><strong>挑重点记录！！！</strong><br><strong>学习目标：</strong></p>
-<blockquote>
-<p>At the end of this course, you will be able to:</p>
-</blockquote>
-<blockquote>
-<ul>
-<li>Explain how data networks work.</li>
-<li>Define basic data networking terms.</li>
-<li>Explain what is needed for devices to have network connectivity or Internet access.</li>
-<li>Use the Cisco Packet Tracer simulation and modeling tool to build and test a small data network.</li>
-<li>Identify the devices and component on your home network.</li>
-<li>Build a simple peer-to-peer network.</li>
-</ul>
-</blockquote>
-<h3 id="1-2-Different-Type-of-Networks"><a href="#1-2-Different-Type-of-Networks" class="headerlink" title="1.2 Different Type of Networks"></a>1.2 Different Type of Networks</h3><p>The Internet is considered a <strong>“network of networks”</strong> because it is literally made up of thousands of local networks that are connected to each other.</p>
-<p><img src="http://static.zybuluo.com/Adward-Wang/2hzjiy0ruq39hwr9rx6p0761/Small_Home_Networks.jpg" alt="Small_Home_Networks"></p>
-<blockquote>
-<p>Small home networks connect a few computers to each other and the Internet.</p>
-</blockquote>
-<p><img src="http://static.zybuluo.com/Adward-Wang/v5po95wet5p6xmh7derqnqf2/Small_Office_Home_Office.jpg" alt="Small_Office/Home_Office"></p>
-<blockquote>
-<p>Small Office/Home Office or SOHO network enables computers within a home office or a remote office to connect to a corporate network or access centralized, shared resources.</p>
-</blockquote>
-<p><img src="http://static.zybuluo.com/Adward-Wang/yegv8cql2qwntec8yfcdx4w7/Medium2Large_Networks.jpg" alt="Medium2Large_Networks"></p>
-<blockquote>
-<p>Medium to large networks, such as those used by corporations and schools, can have many locations with hundreds or thousands of interconnected computers.</p>
-</blockquote>
-<p><img src="http://static.zybuluo.com/Adward-Wang/3rmnc3ntmvvln39nm2jg62ei/World_Wide_Networks.jpg" alt="World_Wide_Networks"></p>
-<blockquote>
-<p>The Internet is a network of networks that connects hundreds of millions of computers world-wide.</p>
-</blockquote>
-<h3 id="1-3-Data-on-the-Network"><a href="#1-3-Data-on-the-Network" class="headerlink" title="1.3 Data on the Network"></a>1.3 Data on the Network</h3><p>网络上的所有数据都将以特定的格式转化为比特为进行存储（ASCII码）。<br>人类解释文字和图片，而计算机与网络也只会处理二进制位。</p>
-<blockquote>
-<p>Every input device (mouse, keyboard, voice-activated receiver) will translate human interaction into binary code for the CPU to process and store. Every output device (printer, speakers, monitors, etc.) will take binary data and translate it back into human recognizable form. Within the computer itself, all data is processed and stored as binary.<br>Computers use binary codes to represent and interpret letters, numbers and special characters with bits.<br>A commonly used code is the American Standard Code for Information Interchange <strong>(ASCII)</strong>. With ASCII, each character is represented by eight bits. </p>
-</blockquote>
-<pre><code>For example:
-    Capital letter: A = 01000001
-    Number: 9 = 00111001
-    Special character: # = 00100011</code></pre><h3 id="1-4-Getting-Bits-Moving"><a href="#1-4-Getting-Bits-Moving" class="headerlink" title="1.4 Getting Bits Moving"></a>1.4 Getting Bits Moving</h3><blockquote>
-<p>在数据被转化为一系列的比特位后，它还必须被转化能够通过网络媒体进行传输的信号。<br>媒体有铜线、光纤电缆、以及空气中的电磁波。信号由点或者光模式组成，从一个连接的设备传送到另一个设备。<br>这些模式代表数字位（即数据），并以一系列电脉冲，光脉冲或无线电波的形式从源到目的地跨媒体传播。<br>而信号在到达最终目的地之前可能会被转换多次，因为相应的媒体在源和目的地之间会发生变化。</p>
-</blockquote>
-<p>网络中信号传输有三种常用方法：</p>
-<ul>
-<li>电信号： 将数据转化为电脉冲通过铜线传输</li>
-<li>光信号： 将电信号转化为光脉冲</li>
-</ul>
-<pre><code>     Q： 不能直接将数据转化为光脉冲吗？？？</code></pre><ul>
-<li>无线信号： 使用红外线、微波或者无线电通过<strong>空气</strong>实现传播</li>
-</ul>
-<p>小型网络环境一般使用铜线或者无线进行网络通信，而大型网络一般使用光纤进行可靠的远距离通信。</p>
-<p><img src="http://static.zybuluo.com/Adward-Wang/owcqacpdrxwvbfat4rsi44l6/Three_signals.gif" alt="Three_signals"></p>
-<h3 id="1-5-速度相关概念"><a href="#1-5-速度相关概念" class="headerlink" title="1.5 速度相关概念"></a>1.5 速度相关概念</h3><p>使用   speedtest.net 测试带宽<br><strong>Throughput</strong> is the amount of data sent and received over a connection, including any delays that might occur.<br><strong>Bandwidth</strong> is the capacity of a medium to carry data. （theoretically）</p>
-<h3 id="1-6-网络组件"><a href="#1-6-网络组件" class="headerlink" title="1.6 网络组件"></a>1.6 网络组件</h3><p>现代网络中，计算机主机可以是客户端、服务器或者两者皆是。</p>
-<blockquote>
-<p>The software installed on the computer determines which role the computer plays.</p>
-</blockquote>
-<blockquote>
-<p><strong>Servers</strong> are hosts that have software installed that enable them to provide information, like email or web pages, to other hosts on the network.</p>
-</blockquote>
-<p>每个服务都要求独立的服务器软件。例如，主机需要web服务器软件才能向网络提供web服务。 在网上所访问的每个服务都是由连接到全球Internet的网络上某个位置的服务器提供的。</p>
-<blockquote>
-<p><strong>Clients</strong> are computer hosts that have software installed that enable them to request and display the information obtained from the server. An example of client software is a web browser, such as Internet Explorer, Safari, Mozilla Firefox, or Chrome.</p>
-</blockquote>
-<p><img src="http://static.zybuluo.com/Adward-Wang/3p6dw1uxzlvp1j9wdkq30gne/Client_Server.jpeg" alt="Client_Server"></p>
-<pre><code>The File Server stores corporate end-user files in a central location. The client devices access these files with client software such as Windows Explorer.
-
-The Web Server runs web server software and clients use their browser software, such as Windows Internet Explorer, to access web pages on the server.
-
-The Email Server runs email server software and clients use their mail client software, such as Microsoft Outlook, to access email on the server.</code></pre><h3 id="1-7-网络基础设施"><a href="#1-7-网络基础设施" class="headerlink" title="1.7 网络基础设施"></a>1.7 网络基础设施</h3><p>网络基础设施包含三类硬件：</p>
-<ul>
-<li>中间设备</li>
-<li>终端设备</li>
-<li>网络媒介</li>
-</ul>
-<p><img src="http://static.zybuluo.com/Adward-Wang/vw9ye7adtxk9isuhz256bskg/Examples_of_Intermediate_Devices.png" alt="Examples_of_Intermediate_Devices"></p>
-<p><img src="http://static.zybuluo.com/Adward-Wang/fk0cwxmiw997jv0syvgqim00/Examples_of_End_Devices.jpg" alt="Examples_of_End_Devices"></p>
-<p><img src="http://static.zybuluo.com/Adward-Wang/nw29dsgubzv8mzhk4sn6asro/Examples_of_Network_Media.jpg" alt="Examples_of_Network_Media"></p>
-<p><strong>终端设备（主机）：</strong></p>
-<blockquote>
-<p>形成用户和底层通信网络之间的接口。</p>
-</blockquote>
-<blockquote>
-<p>In order for the intended recipient to receive the message, devices in the network must be uniquely identified. In networks, this is done by assigning each host a unique address. In most networks today, an <strong>IP address</strong> is used. When a host initiates communication, it uses the address of the destination host to specify where the message should be sent.</p>
-</blockquote>
-<p><img src="http://static.zybuluo.com/Adward-Wang/1nff4encbv15xg6rvb4wmzup/data_flowing.gif" alt="data_flowing"></p>
-<h2 id="2、Week2-Getting-Online"><a href="#2、Week2-Getting-Online" class="headerlink" title="2、Week2: Getting Online"></a>2、Week2: Getting Online</h2><h3 id="2-1、-手机通信"><a href="#2-1、-手机通信" class="headerlink" title="2.1、 手机通信"></a>2.1、 手机通信</h3><blockquote>
-<p>手机使用 <strong>无线电</strong> 将声音信号传送到位于特定地理区域的发射塔的天线上。当打电话时，声音信号从一个塔传到另一个塔，直到传送到目的地。它还可以直接从手机发送短信。最常见的移动电话网络称为GSM网络，是“全球移动通信系统”的缩写。</p>
-</blockquote>
-<h3 id="2-2-不同类型的网络（通信即网络？）"><a href="#2-2-不同类型的网络（通信即网络？）" class="headerlink" title="2.2 不同类型的网络（通信即网络？）"></a>2.2 不同类型的网络（通信即网络？）</h3><p>除了GSM 和3G/4G 网络以外，智能手机还可以连接到一些其他类型的网络。</p>
-<ul>
-<li>GPS 全球定位系统 使用卫星发射信号，手机接收到这些信号并计算出手机的当前位置（误差一般在十米之内）</li>
-<li>Wi-Fi </li>
-<li>蓝牙</li>
-<li>NFC（Near Field Communication）让数据在极短的距离间进行通信（几厘米）</li>
-</ul>
-<h3 id="2-3-网络组件的类型"><a href="#2-3-网络组件的类型" class="headerlink" title="2.3 网络组件的类型"></a>2.3 网络组件的类型</h3><blockquote>
+                <pre><code>PS： message 我翻译的是消息，应该是报文更好点。</code></pre><h1 id="Week3、-Communicating-on-the-Local-Area-Network"><a href="#Week3、-Communicating-on-the-Local-Area-Network" class="headerlink" title="Week3、 Communicating on the Local Area Network"></a>Week3、 Communicating on the Local Area Network</h1><h2 id="1-Distributing-Messages-to-Other-Networks"><a href="#1-Distributing-Messages-to-Other-Networks" class="headerlink" title="1. Distributing Messages to Other Networks"></a>1. Distributing Messages to Other Networks</h2><h3 id="1-1-Dividing-the-Local-Network"><a href="#1-1-Dividing-the-Local-Network" class="headerlink" title="1.1 Dividing the Local Network"></a>1.1 Dividing the Local Network</h3><blockquote>
+<p>随着网络规模的增长，通常有必要将一个接入层网络划分成多个接入层网络。基于不同的标准有不同的划分网络方法，包括：</p>
 <ol>
-<li>Hosts 主机</li>
-<li>Peripherals 外围设备（外设）</li>
-<li>Networking devices 网络设备（即中间设备）</li>
-<li>Network media 网络媒介</li>
+<li>Broadcast containment 广播控制</li>
+<li>安全需求</li>
+<li>物理位置</li>
+<li>逻辑分组</li>
 </ol>
 </blockquote>
-<p><strong>Hosts</strong> are any devices that send and receive messages directly across the network.（与网络直接通信）</p>
-<p><img src="http://static.zybuluo.com/Adward-Wang/ymyab42b07e3hq0omxne9nd7/Hosts.png" alt="Hosts"></p>
-<p><strong>共享外设</strong> 不与网络直接相连，而是连接到主机。主机负责跨网络共享外设。主机上配置了软件，使网络上的用户能够使用外设。</p>
-<p><img src="http://static.zybuluo.com/Adward-Wang/jy6bixf318m5yy7t3nnq4v32/Peripherals.png" alt="Peripherals"></p>
-<p><strong>网络设备</strong> 与网络媒介都用于互连主机，网络设备也叫做“中间设备”，因为他通常位于消息在源主机和目标主机之间所经过的路径上。</p>
-<p><img src="http://static.zybuluo.com/Adward-Wang/kqzkne0gu8yz6gtv6lvg98h3/Network_Devices.png" alt="Network_Devices"></p>
-<p><strong>网络媒介</strong> 描述了有线网络中使用的电缆、电线，以及无线网络中使用的无线电。而这些有线和无线网络提供了各种网络组件之间的消息传播路径。</p>
-<p><img src="http://static.zybuluo.com/Adward-Wang/3zo59mc0y38y7cvsf727mxze/Network_Media.png" alt="Network_Media"></p>
 <blockquote>
-<p><code>注意：</code>一些设备可以扮演不只一种角色，这取决于它们是如何连接到网络的。举个例子： 一台直接连到主机上的打印机是个 <strong>外设</strong>，而一台直接连接到网络设备并直接参与网络通信的打印机是一个 <strong>主机</strong>。</p>
-</blockquote>
-<hr>
-<h4 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h4><p><strong>以太网</strong> 是局域网中常用的技术，后来在1983年标准化为 <strong>IEEE 802.3</strong>。 设备都使用以太网网络接口卡（NIC）来访问网络。每个以太网卡都有一个永久嵌入在网卡上的唯一地址，称为媒体访问控制地址（即MAC地址、物理地址）.</p>
-<p><strong>网络图</strong> 分为物理拓扑图与逻辑拓扑图</p>
-<p><strong>物理拓扑图</strong> 显示各种设备如何相连的，显示了设备的位置，所插入的交换机、连接到因特网的路由器以及各个主机的连接方式。如图所示：</p>
-<p><img src="http://static.zybuluo.com/Adward-Wang/g5nyly3osaddyvw4g6hkkblx/Physical_Topology.jpg" alt="Physical_Topology"></p>
-<p><strong>逻辑拓扑图</strong> 更关心如何处理网络的各个区域，以及如何到达这些区域。还显示在网络的不同区域使用的不同协议类型。</p>
-<p>如图所示，显示了每个建筑的IP地址，显示它们通过以太网连接。</p>
-<p><img src="http://static.zybuluo.com/Adward-Wang/2zohik3y089tdqo5b9v1tlnk/Logical_Topology.jpg" alt="Logical_Topology"></p>
-<h3 id="2-4-连接终端设备"><a href="#2-4-连接终端设备" class="headerlink" title="2.4 连接终端设备"></a>2.4 连接终端设备</h3><blockquote>
-<p>为了物理连接到网络,终端用户必须具有网卡。网卡(NIC)是使设备能够连接到有线或无线网络媒介的硬件。它可以集成到主板中，也可以单独安装。</p>
+<p>分布层将这些独立的本地网络连接起来，控制其间流量。它负责确保本地网络主机上主机之间的通信保持在本地。只有发送给其他网络的流量才会被传递出去。</p>
 </blockquote>
 <blockquote>
-<p>除了物理连接外，要让设备连接到网络，还需要对操作系统进行配置。终端设备需要IP地址和其他信息，以便在网络中将其识别。<br>如图，IP配置的三个部分必须正确，设备才能在网络上发送和接收信息。</p>
+<p>组成分布层的网络设备被设计用来互联网络，而不是单独的主机。单个主机通过访问层设备（如交换机）连接到网络。访问层设备通过分部层设备（如路由器）彼此连接。</p>
 </blockquote>
+<p>查看下图有关互联独立网络的附加信息</p>
+<p><img src="http://static.zybuluo.com/Adward-Wang/h2ym21jolbi0h1to2b2udpld/Broadcast_Containment.jpg" alt="Broadcast_Containment"></p>
+<blockquote>
+<p>分布层中的路由器可以将广播限制在需要监听它们的本地网络上。尽管广播是必要的，但是在同一个本地网络上连接太多的主机会产生过多的广播流量，进而会减慢网速。</p>
+</blockquote>
+<p><img src="http://static.zybuluo.com/Adward-Wang/ezg580coyqba0qk4u0depya2/Security.jpg" alt="Security"></p>
+<blockquote>
+<p>分布层中的路由器可以分离并保护机密信息所在的某些计算机组。路由器还可以隐藏内部计算机的地址，以防止受到攻击，并控制谁可以进入或离开本地网络。</p>
+</blockquote>
+<p><img src="http://static.zybuluo.com/Adward-Wang/l2kbyldd174umnulocanl6cd/Locations.jpg" alt="Locations"></p>
+<blockquote>
+<p>分布层的路由器可用于互联组织中地理位置分散的各个本地网络</p>
+</blockquote>
+<p><img src="http://static.zybuluo.com/Adward-Wang/n5ugs4iw6bxpiplua8r9kpnh/Logical_Grouping.png" alt="Logical_Grouping"></p>
+<blockquote>
+<p>分布层中的路由器可用于对具有共同需求或用于访问资源的用户（例如公司内的部门）进行逻辑分组。</p>
+</blockquote>
+<h3 id="1-2-Now-We-Need-Routing"><a href="#1-2-Now-We-Need-Routing" class="headerlink" title="1.2 Now We Need Routing"></a>1.2 Now We Need Routing</h3><blockquote>
+<p>大多数情况下，我们希望我们的设备可以连接到本地网络之外：连接到其他家庭、企业和因特网。本地网段之外的设备称为远程主机。当源设备将数据包发送ou到远程目标设备时，则需要路由器和路由的帮助。<strong>路由</strong>是确定到达目的地的最佳路径的过程。</p>
+</blockquote>
+<blockquote>
+<p>路由器是连接多个第三层IP网络的网络设备。在网络的分布层，路由器引导流量并执行其他对网络有效运行至关重要的功能。路由器和交换机一样，能够解码、读取发送给它们的消息。与基于第二层MAC地址进行转发决策的交换机不同，路由器基于第三层IP地址进行转发决策。</p>
+</blockquote>
+<blockquote>
+<p><strong>数据包</strong>格式包含目标主机和源主机的IP地址，以及在它们之间发送的消息数据。路由器读取目标IP地址的网络部分，并使用它来找到哪个连接的网络是将消息（报文）转发到目标的最佳途径。</p>
+</blockquote>
+<pre><code>Q： 不要和以太网帧弄混了，我感觉我已经有点混了，到后面再理一理，网络层次不同。。。</code></pre><blockquote>
+<p>只要源主机和目标主机的IP地址网络部分不匹配，就必须使用路由器来转发消息（报文）。如果位于网络1.1.1.0上的主机需要向网络5.5.5.0上的主机发送消息，则该主机会将消息转发到路由器。路由器收到该消息后，对<strong>以太网帧</strong>进行解封，然后读取<strong>IP数据包</strong>中的目标IP地址。然后，它确定消息将发往的位置，<strong>将数据包重新封装回新的帧（Nice！）</strong>，并将帧转发到其目的地。</p>
+</blockquote>
+<p>观看下面动画，查看转发消息时交换机和路由器如何使用帧中的MAC和IP地址。</p>
+<p><img src="http://static.zybuluo.com/Adward-Wang/qc0qvrf28shf15t5p5wczo0i/forwarding_message.gif" alt="forwarding_message"></p>
+<pre><code>Q :这怎么和我之前看的以太网帧格式不同，IP packet 封装在哪个部位？？data 里？？</code></pre><hr>
+<h2 id="2-Keeping-a-Table"><a href="#2-Keeping-a-Table" class="headerlink" title="2. Keeping a Table"></a>2. Keeping a Table</h2><h3 id="2-1-Selecting-a-Path"><a href="#2-1-Selecting-a-Path" class="headerlink" title="2.1 Selecting a Path"></a>2.1 Selecting a Path</h3><blockquote>
+<p>路由器如何决定将消息发送到目标网络的路径？？？</p>
+</blockquote>
+<blockquote>
+<p>路由器上的每个端口都连接到不同的局域网。每个路由器包含一个表，表中列出了所有本地连接的网络以及其连接的端口。这些路由表还可以包含有关路由器用来访问非本地连接的其他远程网络的路由信息。</p>
+</blockquote>
+<blockquote>
+<p>路由器接收到帧以后，会对帧进行解码，以获得包含目标IP地址的数据包。它将目标IP地址的网络部分与路由表中列出的网络进行匹配。如果目标网络地址在表中，则路由器会将包封装在新帧中以将其发送出去（PS： 他还将在新帧中插入新的目标MAC地址，并重新计算FCS字段）。它将新帧从路径关联的接口转发到目标网络。将数据包转发到目标网络的过程称为<strong>路由</strong>。</p>
+</blockquote>
+<blockquote>
+<p>路由器接口不转发寻址到本地网络广播IP地址的消息。因此，本地网络广播不会通过路由器发送到其他本地网络。<br>观看以下动画，查看路由器如何转发数据包、阻止广播。</p>
+</blockquote>
+<p><img src="http://static.zybuluo.com/Adward-Wang/x4txn6gm0jho1dj7nqc6cku7/Selecting_a_Path.gif" alt="Selecting_a_Path"></p>
+<h3 id="2-2-Building-the-Tables"><a href="#2-2-Building-the-Tables" class="headerlink" title="2.2 Building the Tables"></a>2.2 Building the Tables</h3><blockquote>
+<p>路由器将数据包转发到以下两个位置之一： </p>
+</blockquote>
+<blockquote>
 <ul>
-<li>IP地址 - 标识网络上的主机</li>
-<li>子网掩码 - 用于标识主机所连接的网络</li>
-<li>默认网关 - 标识主机用来访问Internet或另一个远程网络的<strong>网络设备</strong></li>
+<li>A、包含实际目标主机的直接连接的</li>
+<li>B、转发到到达目标主机的路径上的另一个路由器。</li>
 </ul>
-<p><img src="http://static.zybuluo.com/Adward-Wang/98s0i4tmkfvw9w7r4y300yqn/Addressing_End_Devices.jpg" alt="Addressing_End_Devices"></p>
-<h3 id="2-5-在Windows-上配置IP地址"><a href="#2-5-在Windows-上配置IP地址" class="headerlink" title="2.5 在Windows 上配置IP地址"></a>2.5 在Windows 上配置IP地址</h3><p><img src="http://static.zybuluo.com/Adward-Wang/ckguxkvjak95iudfax3q4mmw/%E7%BD%91%E7%BB%9C%E5%92%8C%E5%85%B1%E4%BA%AB%E4%B8%AD%E5%BF%83.png" alt="网络和共享中心"></p>
-<p><img src="http://static.zybuluo.com/Adward-Wang/mnjpbhw61rsl9agacrxrhxbv/%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5.png" alt="网络连接"></p>
-<p><img src="http://static.zybuluo.com/Adward-Wang/3gul8r5uz4yy4wo9vhdon3hz/%E6%9C%AC%E5%9C%B0%E8%BF%9E%E6%8E%A5%E5%B1%9E%E6%80%A7.png" alt="本地连接属性"></p>
-<p><img src="http://static.zybuluo.com/Adward-Wang/bef5plphsyupl2izdbndm52k/IPv4%E9%85%8D%E7%BD%AE.png" alt="IPv4配置"></p>
-<blockquote>
-<p>大多数情况下，都可以选择自动获取地址，即从DHCP服务器获取信息。<br>但是，总有我们需要手动配置或者静态配置IPv4地址信息的时候。比如一个服务器、或者说一个打印机。</p>
-</blockquote>
-<p><img src="http://static.zybuluo.com/Adward-Wang/z3fwg7x932fpmp9px5b35nka/%E6%89%8B%E5%8A%A8%E9%85%8D%E7%BD%AEIP.PNG" alt="手动配置IP"></p>
-<blockquote>
-<p>在这里，我们将 IP 地址设为  192.168.1.100， 然后子网掩码保留默认的  255.255.255.0，大多数情况下你都可以将其设为默认， 默认网关 设为 192.168.1.1，这其实是我们的本地路由器IPv4地址，这是我们本地网络的出口，所有的消息将从这里发送到其他的网络。域名服务器地址，我们将其设为 8.8.8.8（谷歌提供）</p>
-</blockquote>
-<p><img src="http://static.zybuluo.com/Adward-Wang/rut25nkefyjqw9b4typisgve/Manual_Dynamic_IP_Configuration.jpg" alt="Manual_Dynamic_IP_Configuration"></p>
-<blockquote>
-<p>DHCP服务器 可以是独立服务器，也可以是路由器的一部分。大多数家庭路由器还装有DHCP服务器。它们同时执行<strong>路由任务</strong>，将数据包从网络转发到Internet服务提供商、到网络，它们同时也充当<strong>DHCP服务器</strong>。它们自动将IPv4地址信息提供给你的电脑和网络上的其他设备。同样，我们只想对那些必须始终具有相同IP地址信息的设备(如打印机或服务器)进行静态配置。</p>
-</blockquote>
-<hr>
-<p><strong>拓展： ICMP</strong></p>
-<blockquote>
-<p>因特网控制消息协议（ICMP）是支持协议在因特网协议套件。网络设备（包括路由器）使用它来发送错误消息和操作信息，例如，这些信息和操作信息指示所请求的服务不可用或者无法访问主机或路由器。ICMP与TCP和UDP等传输协议的不同之处在于 ，它通常不用于在系统之间交换数据，也不被最终用户网络应用程序定期使用（除了ping和traceroute）。</p>
-</blockquote>
-<hr>
-<h2 id="3、Week3-Exploring-Networks-with-Packet-Tracer"><a href="#3、Week3-Exploring-Networks-with-Packet-Tracer" class="headerlink" title="3、Week3: Exploring Networks with Packet Tracer"></a>3、Week3: Exploring Networks with Packet Tracer</h2><blockquote>
-<p>主要介绍如何使用这个软件 以及两个仿真小lab, 不是很难。</p>
 </blockquote>
 <blockquote>
-<p>主界面</p>
+<p>当路由器封装帧以将其转发出以太网接口时，他<strong>必须包含目标MAC地址</strong>。如果目标主机是本地连接到路由器的网络的一部分，则这是实际目标主机的MAC地址。如果路由器必须将数据包转发到另一台路由器，<strong>它将使用连接的路由器的MAC地址</strong>。路由器从<strong>ARP表</strong>获取这些MAC地址。</p>
 </blockquote>
-<p><img src="http://static.zybuluo.com/Adward-Wang/rhssg903eq3qny3yj4ftesoy/Cisco_Packet_Tracer.jpg" alt="Cisco_Packet_Tracer"></p>
 <blockquote>
-<p>各部分功能介绍</p>
+<p><strong>每个路由器接口都是其所连接的本地网络的一部分，并为该网络维护自己的ARP表。ARP表中包含该网络上所有单个主机的MAC地址和IPv4地址。</strong></p>
 </blockquote>
-<p><img src="http://static.zybuluo.com/Adward-Wang/bn2tqmw1tb7js4b8kdnwzm9f/PT_Function.png" alt="PT_Function"></p>
-<hr>
-<h2 id="4、Week4-Building-a-Simple-Peer-to-Peer-Networking（构建简单的点对点网络）"><a href="#4、Week4-Building-a-Simple-Peer-to-Peer-Networking（构建简单的点对点网络）" class="headerlink" title="4、Week4: Building a Simple Peer-to-Peer Networking（构建简单的点对点网络）"></a>4、Week4: Building a Simple Peer-to-Peer Networking（构建简单的点对点网络）</h2><h3 id="4-1-什么是网络媒介"><a href="#4-1-什么是网络媒介" class="headerlink" title="4.1 什么是网络媒介"></a>4.1 什么是网络媒介</h3><blockquote>
-<p>现代网络通常使用三种类型的媒介来互联设备、提供数据的传输路径。三种媒介有：</p>
+<blockquote>
+<p>观看以下动画，查看主机和路由器如何处理和转发数据包。</p>
 </blockquote>
+<p><img src="http://static.zybuluo.com/Adward-Wang/lhcmly268sgcaz7zboo7fbq5/Build_the_Table.gif" alt="Build_the_Table"></p>
+<h3 id="2-3-How-Routers-Use-Tables"><a href="#2-3-How-Routers-Use-Tables" class="headerlink" title="2.3 How Routers Use Tables"></a>2.3 How Routers Use Tables</h3><blockquote>
+<p>路由器在本地和远程网络之间传输信息。为此，路由器必须使用路由表来存储信息。路由表与单个主机的地址无关。<strong>路由表包含网络的地址以及到达这些网络的最佳路径。</strong></p>
+</blockquote>
+<blockquote>
+<p>有两种方法进入路由表：<br>1、通过从网络中其他路由器接收到的信息动态更新。<br>2、由网络管理员手动输入。<br>路由器使用路由表来确定使用哪个接口将消息转发到其预期目的地。</p>
+</blockquote>
+<blockquote>
+<p>如果路由器无法确定将消息转发到何处，它将丢弃该消息。（(⊙o⊙)…），网络管理员使用<strong>默认路由</strong>配置路由表，以防止丢弃数据包，因为到目标网络的路径不在路由表中。<strong>默认路由</strong>是路由器转发包含未知目标IP网络地址的数据包的接口。这个默认路由通常连接到另一个可以将包转发到其最终目的地网络的路由器。</p>
+</blockquote>
+<blockquote>
+<p>查看下图信息，以查看路由表中每种条目类型的描述。</p>
+</blockquote>
+<p><img src="http://static.zybuluo.com/Adward-Wang/w11ao6ynd8t24pp6y0k2cpxu/Routing_Table.jpg" alt="Routing_Table"></p>
+<blockquote>
 <ul>
-<li>电缆中的铜线</li>
-<li>玻璃或塑料纤维（光纤电缆）</li>
-<li>无线传输</li>
+<li>Type 连接类型，C代表直接</li>
+<li>Network 目的地的网络地址</li>
+<li>Port 用于将数据包转发到指定目标网络的路由器上的接口。</li>
 </ul>
-<blockquote>
-<p>当然，不同的网络媒介有不同的特点与优点。它们有着不同的应用场景，选择网络媒介主要有以下四个主要参考标准：</p>
 </blockquote>
-<ul>
-<li>传输信号的距离</li>
-<li>所安装在的环境</li>
-<li>要求传输的数据总量以及速度</li>
-<li>媒介和安装的成本</li>
-</ul>
-<p><img src="http://static.zybuluo.com/Adward-Wang/ofu5ruqsnqsf8br035omjnp0/Network_Media2.png" alt="Network_Media2.png"></p>
-<hr>
-<p><strong>拓展：常见的网络电缆</strong></p>
-<blockquote>
-<p>1.双绞线</p>
-</blockquote>
-<p><img src="http://static.zybuluo.com/Adward-Wang/uquvhr5slm3vmx663bqqe9gm/Twisted_pair.jpg" alt="Twisted_pair"></p>
-<blockquote>
-<p>现代以太网技术通常使用一种叫双绞线的铜线电缆来互联设备。因为以太网是大多数本地网络的基础。双绞线则是最常用的网络电缆类型之一。为了减少干扰，电线成对地组合在一起。成对的电线是有颜色的，这样你就可以在每一端识别出相同的电线。通常在每一对中，其中一根线是纯色的，它的伙伴是相同颜色的条纹到白色背景上。</p>
+<h3 id="2-4-Sending-to-Remote-Networks"><a href="#2-4-Sending-to-Remote-Networks" class="headerlink" title="2.4 Sending to Remote Networks"></a>2.4 Sending to Remote Networks</h3><blockquote>
+<p>主机用于将消息发送到远程网络上的目标的方法与主机在同一本地网络上发送消息的方法不同。当主机需要将消息发送到位于同一网络上的另一个主机时，它将<strong>直接转发</strong>该消息。主机将使用ARP发现目标主机的MAC地址。IPv4数据包包含目标IPv4地址，并将该数据包<strong>封装</strong>到包含目标MAC地址的帧中并转发出去。</p>
 </blockquote>
 <blockquote>
-<p>2.同轴电缆</p>
-</blockquote>
-<p><img src="http://static.zybuluo.com/Adward-Wang/rfsmex0pkxcr6tzg8mpl8vz4/Coaxial_Cable.jpg" alt="Coaxial_Cable"></p>
-<blockquote>
-<p>同轴电缆通常由铜或铝制成，并被有线电视公司用来提供服务。它还用于连接组成卫星通信系统的各种组件。同轴电缆是最早开发的网络布线类型之一。同轴电缆是有线电视公司使用的铜质电缆。同轴电缆具有一个传导信号的刚性铜芯。该芯线通常被一层绝缘层，编织金属屏蔽层和保护套所包围。它用作传输高频或宽带信号的高频传输线。</p>
+<p>当主机需要将消息发送到远程网络时，它<strong>必须使用路由器</strong>。主机像以前一样在数据包中包含目标主机的IP地址。但是，当将数据包封装到帧中时，它将路由器的MAC地址作为帧的目标地址。这样，路由器将<strong>基于MAC地址接收帧</strong>。</p>
 </blockquote>
 <blockquote>
-<p>3.光纤</p>
-</blockquote>
-<p><img src="http://static.zybuluo.com/Adward-Wang/cap5awep1y6jigrs6l8ssh67/Fiber-optic.jpg" alt="Fiber-optic"></p>
-<blockquote>
-<p>光纤电缆由玻璃或塑料制成。他们有非常高的带宽，这使他们能够携带非常大量的数据。光纤用于骨干网络、大型企业环境和大型数据中心。它也被电话公司广泛使用。光纤电缆可以是玻璃的，也可以是塑料的，直径和人的头发差不多，可以长距离高速传输数字信息。因为它们使用光而不是电，所以电干扰不会影响信号。光纤电缆和通信一样有很多用途。它们也被用于医学成像、医疗和机械工程检查。</p>
-</blockquote>
-<h3 id="4-2-以太网电缆"><a href="#4-2-以太网电缆" class="headerlink" title="4.2 以太网电缆"></a>4.2 以太网电缆</h3><blockquote>
-<p>大多数家庭和学校的网络都是用双绞铜线连接的。与其他类型的电缆相比，这种类型的电缆价格低廉，容易获得。</p>
+<p>源主机如何确定路由器的MAC地址？通常在其TCP/IP设置中配置的默认网关地址为主机提供路由器的IPv4地址。默认网关地址是与源主机连接到相同本地网络的路由器接口的地址。本地网络上的所有主机都使用默认网关地址将消息发送到路由器。而当主机知道默认网关IPv4地址时，它可以使用ARP确定MAC地址。然后将路由器的MAC地址放在帧里，该帧发往另一个网络。 </p>
 </blockquote>
 <blockquote>
-<p>双绞线由一对或多对绝缘铜线组成，这些铜线被扭在一起并包裹在保护套中。像所有的铜电缆一样，双绞线使用<strong>电脉冲</strong>来传输数据。</p>
+<p>查看附图以查看不同设备的IP配置和默认网关地址</p>
+</blockquote>
+<p><img src="http://static.zybuluo.com/Adward-Wang/oz6p6rhz7fkibo0ilxw50fsn/Sending_to_Remote_Networks.jpg" alt="Sending_to_Remote_Networks"></p>
+<p><img src="http://static.zybuluo.com/Adward-Wang/56q60sh1e7cfthlz77diumr7/H2.png" alt="H2_H3_IP"></p>
+<pre><code>The subnet mask is used along with the source IP address to determine if two hosts are on the same network. An AND operation is performed on the IP address and subnet mask to determine the network.
+子网掩码与源IP地址一起使用，以确定两个主机是否在同一网络上。对IP地址和子网掩码执行AND操作以确定网络。</code></pre><hr>
+<h2 id="3-Creating-a-LAN"><a href="#3-Creating-a-LAN" class="headerlink" title="3. Creating a LAN"></a>3. Creating a LAN</h2><h3 id="3-1-Local-Area-Networks"><a href="#3-1-Local-Area-Networks" class="headerlink" title="3.1 Local Area Networks"></a>3.1 Local Area Networks</h3><blockquote>
+<p>局域网（LAN）指一个局域网或一组统一管理控制的互联局域网。在联网初期，LAN被定义为存在于单个物理位置的小型网络。虽然LAN可以是安装在家庭或小型办公室中的单个本地网络，但LAN的定义已演变为<strong>包括由数百个主机组成的互连的本地网络</strong>，这些主机安装在多个建筑物和位置中。</p>
 </blockquote>
 <blockquote>
-<p>通过铜线传输的数据对电磁干扰(EMI)很敏感，这会降低电缆的数据传输率。家中常见的会产生电磁干扰的物品包括微波炉和荧光灯具。另一种干扰源，即串扰，发生在电缆长时间捆绑在一起的时候。来自一根电缆的电脉冲可以跨越到相邻的电缆。当电缆安装和终止不当时，这种情况最常见。当数据传输由于串扰等干扰而损坏时，必须重新传输数据。这会降低介质的数据承载能力。</p>
+<p>要记住的是： 局域网内的所有本地网络都处于一个管理控制之下。局域网的其他共同特征是它们通常使用以太网或无线协议，并且它们支持高数据速率。</p>
 </blockquote>
 <blockquote>
-<p>下图展示了数据传输是如何被干扰所影响的</p>
-</blockquote>
-<p><img src="http://static.zybuluo.com/Adward-Wang/kpobk4r3dih0hk5566muarkr/cable_affected.jpg" alt="cable_affected"></p>
-<hr>
-<blockquote>
-<p>Addition:<br>双绞线分为UTP（最常用、廉价、高带宽、易安装）和STP（昂贵，不灵活，不常用号，某些电气环境中使用，干扰多。例如在工厂中）</p>
-</blockquote>
-<h3 id="4-3-其他类型的网络电缆"><a href="#4-3-其他类型的网络电缆" class="headerlink" title="4.3 其他类型的网络电缆"></a>4.3 其他类型的网络电缆</h3><p><strong>1、有线电视和卫星电缆</strong></p>
-<blockquote>
-<p>像双绞线一样，同轴电缆以<strong>电信号</strong>的形式传输数据。与UTP相比，它提供了更好的屏蔽，因此可以承载更多数据。同轴电缆通常由铜或铝制成。有线电视公司使用它来提供服务并连接组成卫星通信系统的各种组件。您可能已经熟悉用于将电视机连接到信号源的同轴电缆，无论是有线电视插座，卫星电视还是家中的常规天线。通过添加<strong>电缆调制解调器</strong>，有线电视提供商可以在同一同轴电缆上提供数据和Internet服务以及电视信号和电话。</p>
+<p>内部网通常用于指属于某个组织的专用局域网，旨在仅供该组织的成员、雇员或其他经过授权的人访问。</p>
 </blockquote>
 <blockquote>
-<p>尽管同轴电缆具有改善的数据传输特性，但双绞线电缆已取代了局域网中的同轴电缆。替换的原因之一是，与UTP相比，同轴电缆在物理上更难安装，更昂贵且更难于排除故障。</p>
+<p>查看下图中的不同局域网类型，请注意是否存在可以创建或限制广播域的设备。</p>
 </blockquote>
-<p>观看以下同轴电缆构造的动画。</p>
-<p><img src="http://static.zybuluo.com/Adward-Wang/tznhe6e3laor5okguu7lie91/Coaxial_Cable2.jpg" alt="Coaxial_Cable"></p>
-<p><strong>2、光纤</strong></p>
-<blockquote>
-<p>使用<strong>光脉冲</strong>传输数据。广泛运用于企业环境和大型数据中心。光纤电缆由玻璃或塑料构成，两者都不导电。这意味着它不受EMI和RFI的影响，并且适合安装在有干扰的环境中。光纤连接是将网络从一个建筑扩展到另一个建筑的一个很好的选择，这既是出于距离考虑，也是因为光纤比铜电缆更能抵抗室外环境条件。每个光纤电路实际上是<strong>两条光缆</strong>。一个用于传输数据;另一个用于接收数据。</p>
-</blockquote>
-<blockquote>
-<p>光纤链路的带宽可以达到100 Gb/s，而且随着标准的制定和采用，带宽还在不断增加。</p>
-</blockquote>
-<p><img src="http://static.zybuluo.com/Adward-Wang/8ddr7gy5in2iv8o8s4h354q0/fiber-optic-detail.png" alt="fiber-optic-detail"></p>
-<blockquote>
-<p><strong>Jacket</strong><br>Typically a PVC jacket that protects the fiber against abrasion, moisture, and other contaminants. This outer jacket composition can vary depending on the cable usage.</p>
+<p><img src="http://static.zybuluo.com/Adward-Wang/hdx622x918otyjh3li6ynkgx/Single_LAN.png" alt="Single_LAN"></p>
+<p><img src="http://static.zybuluo.com/Adward-Wang/royvjrsh5pqecu4n1vetbjs0/Multiple_LAN.png" alt="Multiple_LAN"></p>
+<pre><code>PS：局域网和子网概念不同</code></pre><h3 id="3-2-Assigning-Hosts-to-a-LAN"><a href="#3-2-Assigning-Hosts-to-a-LAN" class="headerlink" title="3.2 Assigning Hosts to a LAN"></a>3.2 Assigning Hosts to a LAN</h3><blockquote>
+<p>在LAN内，可以将所有主机放置在单个本地网络上，也可以将它们划分在由分布层连接的多个网络之间。答案取决于所需的结果。如图1所示，将所有主机放置在单个本地网络上可以使所有其他主机看到它们。这是因为只有一个广播域，并且主机使用ARP相互查找。</p>
 </blockquote>
 <blockquote>
-<p><strong>Strengthening Material</strong><br>Surrounds the buffer, prevents the fiber cable from being stretched when it is being pulled. The material used is often the same material used to produce bulletproof vests.</p>
+<p>在简单的网络设计中，将所有主机保留在单个本地网络中可能是有益的。但是，随着网络规模的扩大，增加的流量将降低网络性能和速度。在这种情况下，将某些主机移至远程网络可能会有所帮助。</p>
 </blockquote>
 <blockquote>
-<p><strong>Buffer</strong><br>Used to help shield the core and cladding from damage.</p>
+<p>如图2所示，在远程网络上放置其他主机将减少流量需求的影响。但是，如果不使用路由，则一个网络上的主机将无法与另一网络上的主机通信。路由器增加了网络配置的复杂性，并且可能导致从一个本地网络发送到另一个本地网络的数据包出现延迟或时间延迟。</p>
 </blockquote>
-<blockquote>
-<p><strong>Cladding</strong><br>Made from slightly different chemicals than those used to create the core. It tends to act like a mirror by reflecting light back into the core of the fiber. This keeps light in the core as it travels down the fiber.</p>
-</blockquote>
-<blockquote>
-<p><strong>Core</strong><br>The core is actually the light transmission element at the center of the optical fiber. This core is typically silica or glass. Light pulses travel through the fiber core.</p>
-</blockquote>
-<h3 id="4-4-Peer-to-peer-Networking"><a href="#4-4-Peer-to-peer-Networking" class="headerlink" title="4.4 Peer-to-peer Networking"></a>4.4 Peer-to-peer Networking</h3><blockquote>
-<p>什么是点对点网络呢？？？<br>客户端和服务器软件通常运行在单独的计算机上，但是一台计算机同时运行客户端和服务器软件也是可能的。在小型企业和家庭中，许多计算机充当网络上的服务器和客户端。这种类型的网络称为<strong>点对点网络</strong>。<br>最简单的点对点网络由两台直接连接的计算机组成，使用有线或无线连接。然后，两台计算机都能够使用这个简单的网络彼此交换数据和服务，根据需要充当客户机或服务器。</p>
-</blockquote>
-<blockquote>
-<p>多台个人电脑也可以被连接在一起，以创建一个更大的点对点网络，但这需要一个网络设备，如<strong>交换机</strong>，来连接电脑。</p>
-</blockquote>
-<blockquote>
-<p>点对点环境的主要缺点是，如果主机同时充当客户机和服务器，它的<strong>性能可能会降低</strong>。该图列出了点对点网络的一些优点和缺点。</p>
-</blockquote>
-<blockquote>
-<p>在较大的企业中，由于潜在的高网络流量，通常需要专门的服务器来支持服务请求的数量。</p>
-</blockquote>
-<p><img src="http://static.zybuluo.com/Adward-Wang/ov3gxjiprc3wmsz6px62ywb3/P2P_Network.jpg" alt="P2P_Network"></p>
-<h3 id="4-5-网络有效吗？"><a href="#4-5-网络有效吗？" class="headerlink" title="4.5 网络有效吗？"></a>4.5 网络有效吗？</h3><h4 id="1、ping-命令"><a href="#1、ping-命令" class="headerlink" title="1、ping 命令"></a><strong>1、ping 命令</strong></h4><blockquote>
-<p>测试消息源的IP地址和目的地的IP地址之间的端到端连接。它度量测试消息从源到目的地的往返时间，以及传输是否成功。但是，如果消息没有到达目的地，或者在途中遇到了延迟，就无法确定问题位于何处。</p>
-</blockquote>
-<pre><code>格式：  ping *****
-        ping 192.168.30.1</code></pre><blockquote>
-<p>观看下面的动画来看ping命令如何运作</p>
-</blockquote>
-<p><img src="http://static.zybuluo.com/Adward-Wang/x4xtccb96b57ys2vbyjq5mk5/ping_command.gif" alt="ping_command"></p>
-<h4 id="2、Traceroute"><a href="#2、Traceroute" class="headerlink" title="2、Traceroute"></a><strong>2、Traceroute</strong></h4><blockquote>
-<p>因特网是不同网络的互联。如图所示，traceroute实用程序可以跟踪消息从源到目标的路由。消息所经过的每个单独的网络被称为一跳。Traceroute显示了整个过程中的每一跳以及消息到达该网络并返回所需的时间。</p>
-</blockquote>
-<p><img src="http://static.zybuluo.com/Adward-Wang/vet0a8j7buneu3eaz811zp34/Traceroute.jpg" alt="Traceroute"></p>
-<blockquote>
-<p>如果出现问题（无法ping通），可以使用traceroute实用程序的输出来帮助确定消息丢失或延迟的位置。<br>traceroute实用程序在Windows环境中称为<code>tracert</code>。可以通过Windows环境中的命令提示符访问它。通常情况下，你可以通过“开始”菜单或“应用程序”屏幕上的命令提示快捷方式打开命令提示，这取决于你使用的是什么版本的Windows。</p>
-</blockquote>
-<blockquote>
-<p><strong>路由器</strong>决定了到达目的地的最佳路径，通过很多路由器我们可以达到所要访问的内容。Traceroute程序报告数据包成功到达的每个路由器，到哪里失败，接下来<strong>针对失败的点</strong>我们再进一步找出失败的原因。</p>
-</blockquote>
-<h3 id="4-6-在PT上构建一个简单的网络"><a href="#4-6-在PT上构建一个简单的网络" class="headerlink" title="4.6 在PT上构建一个简单的网络"></a>4.6 在PT上构建一个简单的网络</h3><blockquote>
-<p>简单的实验，放置主机、交换机，用以太网电缆连接,配置主机ip,用ping 测试主机连接有效性。</p>
-</blockquote>
-<hr>
-<h2 id="学习总结"><a href="#学习总结" class="headerlink" title="学习总结"></a>学习总结</h2><blockquote>
-<p>思科网络基础的第一门课，内容浅显易懂，关键图形化了很多抽象的概念，还有仿真实验工具，总的来说体验很好，算是比较不错的入门课。</p>
-</blockquote>
+<p><img src="http://static.zybuluo.com/Adward-Wang/pgo0y0ywmkdanml6tg7cboca/Figure%201.%20Placing%20All%20Hosts%20in%20One%20Local%20Network%20Segment.jpg" alt="Figure 1. Placing All Hosts in One Local Network Segment"></p>
+<p><img src="http://static.zybuluo.com/Adward-Wang/73g1lmeav2hprs8pify3w7t6/Figure%202.%20Placing%20Hosts%20in%20Remote%20Network%20Segments.jpg" alt="Figure 2. Placing Hosts in Remote Network Segments"></p>
 
             </div>
             <hr />
@@ -903,9 +746,9 @@ The Email Server runs email server software and clients use their mail client so
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Internet Connection —— How to Get Online?》
+                    《Network Protocols and Architecture (3)》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/05/31/internet-connection-how-to-get-online/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/06/04/network-protocols-architecture-3/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Adward
             </a> 采用
@@ -946,7 +789,7 @@ The Email Server runs email server software and clients use their mail client so
         repo: 'EnforcerK.github.io',
         owner: 'EnforcerK',
         admin: "Adward_Wang",
-        id: '2020/05/31/internet-connection-how-to-get-online/',
+        id: '2020/06/04/network-protocols-architecture-3/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1229,29 +1072,30 @@ The Email Server runs email server software and clients use their mail client so
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/06/03/network-protocols-architecture-2/">
+                <a href="/2020/06/04/network-protocols-architecture-3/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/24.jpg" class="responsive-img" alt="Network Protocols and Architecture (2)">
+                        <img src="/medias/featureimages/26.jpg" class="responsive-img" alt="Network Protocols and Architecture (3)">
                         
-                        <span class="card-title">Network Protocols and Architecture (2)</span>
+                        <span class="card-title">Network Protocols and Architecture (3)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            网络协议与架构 第二周课程笔记
+                            网络协议与架构 第三周课程笔记
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-06-03
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-06-04
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -1264,6 +1108,7 @@ The Email Server runs email server software and clients use their mail client so
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1286,24 +1131,24 @@ The Email Server runs email server software and clients use their mail client so
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/24/network-protocols-architecture-1/">
+                <a href="/2020/06/03/network-protocols-architecture-2/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="Network Protocols and Architecture (1)">
+                        <img src="/medias/featureimages/24.jpg" class="responsive-img" alt="Network Protocols and Architecture (2)">
                         
-                        <span class="card-title">Network Protocols and Architecture (1)</span>
+                        <span class="card-title">Network Protocols and Architecture (2)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一、Week11. Establishing the Rules1.1 Reading: About This Course有几个这个课程提出的学习目标，等学完用来检测一下自己的学习情况。At the end of this course,
+                            网络协议与架构 第二周课程笔记
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-24
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-06-03
                             </span>
                         <span class="publish-author">
                             

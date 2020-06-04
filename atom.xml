@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://enforcerk.xyz/"/>
-  <updated>2020-06-03T01:08:06.258Z</updated>
+  <updated>2020-06-04T03:17:29.180Z</updated>
   <id>https://enforcerk.xyz/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Network Protocols and Architecture (3)</title>
+    <link href="https://enforcerk.xyz/2020/06/04/network-protocols-architecture-3/"/>
+    <id>https://enforcerk.xyz/2020/06/04/network-protocols-architecture-3/</id>
+    <published>2020-06-04T03:00:23.000Z</published>
+    <updated>2020-06-04T03:17:29.180Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;pre&gt;&lt;code&gt;PS： message 我翻译的是消息，应该是报文更好点。&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;Week3、-Communicating-on-the-Local-Area-Network&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="计算机网络" scheme="https://enforcerk.xyz/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+      <category term="网络基础" scheme="https://enforcerk.xyz/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
+    
+      <category term="Cisco" scheme="https://enforcerk.xyz/tags/Cisco/"/>
+    
+  </entry>
   
   <entry>
     <title>Network Protocols and Architecture (2)</title>
